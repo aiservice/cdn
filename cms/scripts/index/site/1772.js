@@ -1,0 +1,1 @@
+var app_domain = "www.xiaolipan.com";var is_english = false;var site_id = 1772;var book_total_fee = 0.5;var baid = "0f90217102126a4a3246240e645d07a0";var gaid = "UA-40716497-22";filterUrls = ["xxxxx"]; siteGUrls = ["xxxxx"]; siteBUrls = ["xxxxx"];
