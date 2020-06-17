@@ -12,4 +12,5 @@ if(typeof downParams != "undefined" && downParams){
     }
 }
 
-document.writeln('<div class="panel panel-danger"> <div class="panel-heading"> <h3 class="panel-title">感谢您的支持: </h3> </div> <div class="panel-body">感谢所有打赏的朋友。感谢你们的支持。你们打赏的每一分钱后续都会被用在更换更好的服务器及资源购买上。你们的支持和鼓励将会让我们更好的发展下去！ </div> </div><div class="panel panel-info"> <div class="panel-heading"> <h3 class="panel-title">声明：</h3> </div> <div class="panel-body"> 本站大部分下载资源收集于网络，只做学习和交流使用，版权归原作者所有，与本站无关。本站发布的内容若侵犯到您的权益，请联系:<code>jianxi123532@gmail.com</code>，我们将及时处理！ </div> </div>');
+document.writeln('<div class="panel panel-info"> <div class="panel-heading"> <h3 class="panel-title">声明：</h3> </div> <div class="panel-body"> 本站大部分下载资源收集于网络，只做学习和交流使用，版权归原作者所有，与本站无关。本站发布的内容若侵犯到您的权益，请联系:<code>jianxi123532@gmail.com</code>，我们将及时处理！ </div> </div>');
+// document.writeln('<div class="panel panel-danger"> <div class="panel-heading"> <h3 class="panel-title">感谢您的支持: </h3> </div> <div class="panel-body">感谢所有打赏的朋友。感谢你们的支持。你们打赏的每一分钱后续都会被用在更换更好的服务器及资源购买上。你们的支持和鼓励将会让我们更好的发展下去！ </div> </div><div class="panel panel-info"> <div class="panel-heading"> <h3 class="panel-title">声明：</h3> </div> <div class="panel-body"> 本站大部分下载资源收集于网络，只做学习和交流使用，版权归原作者所有，与本站无关。本站发布的内容若侵犯到您的权益，请联系:<code>jianxi123532@gmail.com</code>，我们将及时处理！ </div> </div>');
