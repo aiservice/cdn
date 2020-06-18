@@ -8,7 +8,7 @@ if(typeof downParams != "undefined" && downParams){
 }else{
     if (typeof cur_location_url != "undefined"&&cur_location_url.indexOf("download.html") === -1) {
         var download_url =  "https://72k.us/file/1210232-448745322" ;
-        document.writeln('<div class="alert alert-success" role="alert"> 暂无资源，点击下载：<a href="'+download_url+'" target="_blank" class="alert-link">《快速求书指南》</a> </div>');
+        document.writeln('<div class="alert alert-success" role="alert"> 暂无资源：<a href="'+download_url+'" target="_blank" class="alert-link">《点击下载快速求书指南》</a> </div>');
     }
 }
 
