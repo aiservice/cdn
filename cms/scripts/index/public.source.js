@@ -324,25 +324,25 @@ if (typeof cur_location_url != "undefined") {
     //     o_data_ad_mobile="8434150992547607260-537";
     // }
 
-    // if(cur_location_url.indexOf("china") !== -1){
-    //     site_enabled_alimama = true;
-    //     alimama_data_ad_336="16234744_3413338_110557850457";
-    // }else if(cur_location_url.indexOf("tie") !== -1){
-    //     site_enabled_alimama = true;
-    //     alimama_data_ad_336="16234744_1849650109_110560550420";
-    // }else if(cur_location_url.indexOf("soft") !== -1){
-    //     site_enabled_alimama = true;
-    //     alimama_data_ad_336="16234744_1841850188_110566700302";
-    // }else if(cur_location_url.indexOf("lzys") !== -1){
-    //     site_enabled_alimama = true;
-    //     alimama_data_ad_336="16234744_339200173_110561200346";
-    // }else if(cur_location_url.indexOf("good") !== -1){
-    //     site_enabled_alimama = true;
-    //     alimama_data_ad_336="16234744_1847800138_110564800312";
-    // }else if(cur_location_url.indexOf("lipan") !== -1){
-    //     site_enabled_alimama = true;
-    //     alimama_data_ad_336="16234744_1847200120_110562550214";
-    // }
+    if(cur_location_url.indexOf("china") !== -1){
+        site_enabled_alimama = true;
+        alimama_data_ad_336="311574";
+    }else if(cur_location_url.indexOf("tie") !== -1){
+        site_enabled_alimama = true;
+        alimama_data_ad_336="311576";
+    }else if(cur_location_url.indexOf("soft") !== -1){
+        site_enabled_alimama = true;
+        alimama_data_ad_336="311577";
+    }else if(cur_location_url.indexOf("lzys") !== -1){
+        site_enabled_alimama = true;
+        alimama_data_ad_336="311578";
+    }else if(cur_location_url.indexOf("good") !== -1){
+        site_enabled_alimama = true;
+        alimama_data_ad_336="311570";
+    }else if(cur_location_url.indexOf("lipan") !== -1){
+        site_enabled_alimama = true;
+        alimama_data_ad_336="311572";
+    }
 
 }
 
@@ -392,14 +392,15 @@ function loadAlimama(loc) {
 }
 function loadAlimamaTemplate(id) {
     if (typeof id != "undefined" || id != "") {
-        document.write('<a style="display:none!important" id="tanx-a-'+id+'"></a>');
-        tanx_s = document.createElement("script");
-        tanx_s.type = "text/javascript";
-        tanx_s.charset = "gbk";
-        tanx_s.id = "tanx-s-"+id;
-        tanx_s.async = true;
-        tanx_s.src = "//p.tanx.com/ex?i="+id;
-        tanx_h = document.getElementsByTagName("head")[0];
-        if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
+        document.write('<script src="http://wm.lrswl.com/page/s.php?s='+id+'&w=300&h=250"></script>');
+        // document.write('<a style="display:none!important" id="tanx-a-'+id+'"></a>');
+        // tanx_s = document.createElement("script");
+        // tanx_s.type = "text/javascript";
+        // tanx_s.charset = "gbk";
+        // tanx_s.id = "tanx-s-"+id;
+        // tanx_s.async = true;
+        // tanx_s.src = "//p.tanx.com/ex?i="+id;
+        // tanx_h = document.getElementsByTagName("head")[0];
+        // if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
     }
 }
