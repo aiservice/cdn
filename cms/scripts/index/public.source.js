@@ -324,25 +324,25 @@ if (typeof cur_location_url != "undefined") {
     //     o_data_ad_mobile="8434150992547607260-537";
     // }
 
-    if(cur_location_url.indexOf("china") !== -1){
-        site_enabled_alimama = true;
-        alimama_data_ad_336="16234744_3413338_110557850457";
-    }else if(cur_location_url.indexOf("tie") !== -1){
-        site_enabled_alimama = true;
-        alimama_data_ad_336="16234744_1849650109_110560550420";
-    }else if(cur_location_url.indexOf("soft") !== -1){
-        site_enabled_alimama = true;
-        alimama_data_ad_336="16234744_1841850188_110566700302";
-    }else if(cur_location_url.indexOf("lzys") !== -1){
-        site_enabled_alimama = true;
-        alimama_data_ad_336="16234744_339200173_110561200346";
-    }else if(cur_location_url.indexOf("good") !== -1){
-        site_enabled_alimama = true;
-        alimama_data_ad_336="16234744_1847800138_110564800312";
-    }else if(cur_location_url.indexOf("lipan") !== -1){
-        site_enabled_alimama = true;
-        alimama_data_ad_336="16234744_1847200120_110562550214";
-    }
+    // if(cur_location_url.indexOf("china") !== -1){
+    //     site_enabled_alimama = true;
+    //     alimama_data_ad_336="16234744_3413338_110557850457";
+    // }else if(cur_location_url.indexOf("tie") !== -1){
+    //     site_enabled_alimama = true;
+    //     alimama_data_ad_336="16234744_1849650109_110560550420";
+    // }else if(cur_location_url.indexOf("soft") !== -1){
+    //     site_enabled_alimama = true;
+    //     alimama_data_ad_336="16234744_1841850188_110566700302";
+    // }else if(cur_location_url.indexOf("lzys") !== -1){
+    //     site_enabled_alimama = true;
+    //     alimama_data_ad_336="16234744_339200173_110561200346";
+    // }else if(cur_location_url.indexOf("good") !== -1){
+    //     site_enabled_alimama = true;
+    //     alimama_data_ad_336="16234744_1847800138_110564800312";
+    // }else if(cur_location_url.indexOf("lipan") !== -1){
+    //     site_enabled_alimama = true;
+    //     alimama_data_ad_336="16234744_1847200120_110562550214";
+    // }
 
 }
 
