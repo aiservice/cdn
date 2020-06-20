@@ -22,6 +22,8 @@ o_data_ad_728="3510c2870d9062e18c2b01ebde4b4d90";
 o_data_ad_mobile="3510c2870d9062e18c2b01ebde4b4d90";
 siteOtherUrls = ["localhost","china"];
 
+siteAlimamaUrls = ["localhost","china"];
+
 third_opacity_css  ="opacity: 0.5;"
 
 

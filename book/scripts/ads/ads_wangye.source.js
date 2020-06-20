@@ -313,12 +313,24 @@ console.log("site_enabled_e:"+site_enabled_e);
 
 site_enabled_other = siteEnabledOther(cur_location_url);
 console.log("site_enabled_other:"+site_enabled_other);
+site_enabled_alimama = siteEnabledAlimama(cur_location_url);
 
 function siteEnabledOther(url){
     if(typeof siteOtherUrls != "undefined"){
         for(var i = 0, len = siteOtherUrls.length; i < len; i++){
             console.log(siteOtherUrls[i]);
             if (url.indexOf(siteOtherUrls[i]) !== -1) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+function siteEnabledAlimama(url){
+    if(typeof siteAlimamaUrls != "undefined"){
+        for(var i = 0, len = siteAlimamaUrls.length; i < len; i++){
+            console.log(siteAlimamaUrls[i]);
+            if (url.indexOf(siteAlimamaUrls[i]) !== -1) {
                 return true;
             }
         }
@@ -363,20 +375,20 @@ function loadThirdAdsTemplate(id,mobile) {
         document.write('<script async defer src="https://www.fjsjsj.com/o.js"></script>');
     }
 }
-
 function loadAlimama(loc) {
-        loadAlimamaTemplate(alimama_data_ad_336);
+    loadAlimamaTemplate(alimama_data_ad_336);
 }
 function loadAlimamaTemplate(id) {
     if (typeof id != "undefined" || id != "") {
-        document.write('<a style="display:none!important" id="tanx-a-'+id+'"></a>');
-        tanx_s = document.createElement("script");
-        tanx_s.type = "text/javascript";
-        tanx_s.charset = "gbk";
-        tanx_s.id = "tanx-s-"+id;
-        tanx_s.async = true;
-        tanx_s.src = "//p.tanx.com/ex?i="+id;
-        tanx_h = document.getElementsByTagName("head")[0];
-        if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
+        document.write('<script src="http://wm.lrswl.com/page/s.php?s='+id+'&w=300&h=250"></script>');
+        // document.write('<a style="display:none!important" id="tanx-a-'+id+'"></a>');
+        // tanx_s = document.createElement("script");
+        // tanx_s.type = "text/javascript";
+        // tanx_s.charset = "gbk";
+        // tanx_s.id = "tanx-s-"+id;
+        // tanx_s.async = true;
+        // tanx_s.src = "//p.tanx.com/ex?i="+id;
+        // tanx_h = document.getElementsByTagName("head")[0];
+        // if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
     }
 }
