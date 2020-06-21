@@ -1,5 +1,5 @@
 var app_domain = "www.abc.com";var site_id = 1947;var baid = "ba1218ae42ebe805df7473da488832b1";var gaid = "UA-40716497-9";
-
+var link_email="123@qq.com"
 var book_total_fee = 1.5;
 
 siteOtherUrls=[];

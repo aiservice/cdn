@@ -136,32 +136,32 @@ function loadBaiduAds(loc) {
 }
 function loadOther(){
     // if(isMobile()&&!isWechat()){
-        // var opacity = "";
-        // if (typeof third_opacity_css != "undefined") {
-        //     opacity = third_opacity_css;
-        // }
-        // document.writeln('<div style="'+opacity+'">');
-        // document.writeln('<scri'+'pt src="https://js.qsk666.com/5/2849/7477/20/27.js"> </scri'+'pt>');
-        // document.writeln('</div>');
+    // var opacity = "";
+    // if (typeof third_opacity_css != "undefined") {
+    //     opacity = third_opacity_css;
+    // }
+    // document.writeln('<div style="'+opacity+'">');
+    // document.writeln('<scri'+'pt src="https://js.qsk666.com/5/2849/7477/20/27.js"> </scri'+'pt>');
+    // document.writeln('</div>');
 
-        // document.write('<div> <iframe id="ads_iframe" src="/ads.html" style="width: 100%; border: none; height: auto;"></iframe></div>');
-        // var ads_iframe = document.getElementById('ads_iframe');
-        // setTimeout(function(){
-        //     if (ads_iframe){
-        //         try{
-        //             var url = ads_iframe.contentWindow.location.href;
-        //             console.log("==monitor=="+url)
-        //             if(url.indexOf("ads.html")===-1){
-        //                 ads_iframe.parentNode.removeChild(ads_iframe);
-        //             }
-        //         }catch (e) {
-        //             console.log("==monitor error==",e)
-        //             ads_iframe.parentNode.removeChild(ads_iframe);
-        //         }
-        //     }
-        //
-        // },5000);
-        // setTimeout(function(){if (ads_iframe){ads_iframe.parentNode.removeChild(ads_iframe);}},30000);
+    // document.write('<div> <iframe id="ads_iframe" src="/ads.html" style="width: 100%; border: none; height: auto;"></iframe></div>');
+    // var ads_iframe = document.getElementById('ads_iframe');
+    // setTimeout(function(){
+    //     if (ads_iframe){
+    //         try{
+    //             var url = ads_iframe.contentWindow.location.href;
+    //             console.log("==monitor=="+url)
+    //             if(url.indexOf("ads.html")===-1){
+    //                 ads_iframe.parentNode.removeChild(ads_iframe);
+    //             }
+    //         }catch (e) {
+    //             console.log("==monitor error==",e)
+    //             ads_iframe.parentNode.removeChild(ads_iframe);
+    //         }
+    //     }
+    //
+    // },5000);
+    // setTimeout(function(){if (ads_iframe){ads_iframe.parentNode.removeChild(ads_iframe);}},30000);
     // }
 }
 
@@ -379,7 +379,7 @@ function loadThirdAds(loc) {
         if(isMobile()){
             loadThirdAdsTemplate(o_data_ad_mobile,true);
         } else{
-             loadThirdAdsTemplate(o_data_ad_300);
+            loadThirdAdsTemplate(o_data_ad_300);
         }
     }
     if(loc === "cms_right_bottom"){
