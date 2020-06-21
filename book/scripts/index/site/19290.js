@@ -4,7 +4,8 @@ g_data_ad_slot_recommend = "7657556062";
 g_data_ad_client = "ca-pub-4603891518763240";
 
 filterUrls = ["cate-5008","category-5008","erzidemingfen-zh","biblical-theology-dictionary.html"];
-siteGUrls = ["aishen3","good","shitou","biquge"];
+siteGUrls = ["aishen3"];
+siteAlimamaUrls = ["aishen3"];
 
 o_data_ad_300="3549234227527096833-502";
 o_data_ad_300_right="3549234227527096833-503";
