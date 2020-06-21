@@ -228,8 +228,14 @@ function loadExoAds(loc) {
 }
 function loadExoAdsTemplate(idzone,width,height) {
     //if(!isWechat()){
+    var opacity = "";
+    if (typeof third_opacity_css != "undefined") {
+        opacity = third_opacity_css;
+    }
     ad_idzone = idzone, ad_width = width, ad_height = height;
+    document.write('<div style="'+opacity+'">');
     document.write('<script type="text/javascript" src="https://a.exdynsrv.com/ads.js"></script>');
+    document.write('</div>');
     //}
 }
 function loadExoAdsWidgetTemplate(idzone) {
