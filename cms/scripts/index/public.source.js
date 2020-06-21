@@ -326,22 +326,32 @@ if (typeof cur_location_url != "undefined") {
 
     if(cur_location_url.indexOf("china") !== -1){
         site_enabled_alimama = true;
-        alimama_data_ad_336="311574";
+        alimama_data_ad_336=61347;
+        alimama_data_ad_mobile=61348;
+    }else if(cur_location_url.indexOf("shitou") !== -1){
+        site_enabled_alimama = true;
+        alimama_data_ad_336=61339;
+        alimama_data_ad_mobile=59460;
     }else if(cur_location_url.indexOf("tie") !== -1){
         site_enabled_alimama = true;
-        alimama_data_ad_336="311576";
+        alimama_data_ad_336=61357;
+        alimama_data_ad_mobile=61358;
     }else if(cur_location_url.indexOf("soft") !== -1){
         site_enabled_alimama = true;
-        alimama_data_ad_336="311577";
+        alimama_data_ad_336=61355;
+        alimama_data_ad_mobile=61356;
     }else if(cur_location_url.indexOf("lzys") !== -1){
         site_enabled_alimama = true;
-        alimama_data_ad_336="311578";
+        alimama_data_ad_336=61353;
+        alimama_data_ad_mobile=61354;
     }else if(cur_location_url.indexOf("good") !== -1){
         site_enabled_alimama = true;
-        alimama_data_ad_336="311570";
+        alimama_data_ad_336=61363;
+        alimama_data_ad_mobile=61362;
     }else if(cur_location_url.indexOf("lipan") !== -1){
         site_enabled_alimama = true;
-        alimama_data_ad_336="311572";
+        alimama_data_ad_336=61349;
+        alimama_data_ad_mobile=61364;
     }
 
 }
@@ -388,11 +398,15 @@ function loadThirdAdsTemplate(id,mobile) {
 }
 
 function loadAlimama(loc) {
-    loadAlimamaTemplate(alimama_data_ad_336);
+    if(isMobile()){
+        loadAlimamaTemplate(alimama_data_ad_mobile);
+    }else{
+        loadAlimamaTemplate(alimama_data_ad_336);
+    }
 }
 function loadAlimamaTemplate(id) {
     if (typeof id != "undefined" || id != "") {
-        document.write('<script src="http://wm.lrswl.com/page/s.php?s='+id+'&w=300&h=250"></script>');
+        var ufid=id;var ufwidth=336;var ufheight=280;var ufdomain="//js.penxiangge.com";document.write("<scr"+"ipt type='text/javascript' src='"+ufdomain+"/Include/data_hf'></scri"+"pt>");
         // document.write('<a style="display:none!important" id="tanx-a-'+id+'"></a>');
         // tanx_s = document.createElement("script");
         // tanx_s.type = "text/javascript";
