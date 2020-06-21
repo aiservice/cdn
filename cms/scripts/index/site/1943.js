@@ -1,1 +1,0 @@
-var app_domain = "www.aishen360.com";var is_english = false;var site_id = 1943;var baid = "0f90217102126a4a3246240e645d07a0";filterUrls = ["xxxxx"]; siteGUrls = ["xxxxx"]; siteBUrls = ["xxxxx"];
