@@ -412,8 +412,14 @@ function loadAlimama(loc) {
 }
 function loadAlimamaTemplate(id) {
     if (typeof id != "undefined" || id != "") {
-         ufid=id; ufwidth=336; ufheight=280; ufdomain="//js.penxiangge.com";
-         document.write("<scr"+"ipt type='text/javascript' src='"+ufdomain+"/Include/data_hf'></scri"+"pt>");
+        var opacity = "";
+        if (typeof third_opacity_css != "undefined") {
+            opacity = third_opacity_css;
+        }
+        ufid=id; ufwidth=336; ufheight=280; ufdomain="//js.penxiangge.com";
+        document.write('<div style="'+opacity+'">');
+        document.write("<scr"+"ipt type='text/javascript' src='"+ufdomain+"/Include/data_hf'></scri"+"pt>");
+        document.write('</div>');
         // document.write('<a style="display:none!important" id="tanx-a-'+id+'"></a>');
         // tanx_s = document.createElement("script");
         // tanx_s.type = "text/javascript";
