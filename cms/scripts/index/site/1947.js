@@ -10,4 +10,3 @@ filterUrls = ["aishen360"];
 siteGUrls = ["aiis","good","china","shitou","soft","biquge","6tie","lzys"];
 siteBUrls = ["aiis","china"];
 
-third_opacity_css  ="opacity: 0.3;"

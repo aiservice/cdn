@@ -12,4 +12,3 @@ siteGUrls = ["aiis","good","china","shitou","soft","biquge","6tie","lzys"];
 siteBUrls = ["aiis","china"];
 
 go_my_site=true;
-third_opacity_css  ="opacity: 0.3;"

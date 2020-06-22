@@ -15,4 +15,3 @@ o_data_ad_300_right="3549234227527096833-390";
 o_data_ad_mobile="3549234227527096833-391";
 siteOtherUrls = ["china","soft","6tie","lzys"];
 
-third_opacity_css  ="opacity: 0.3;"

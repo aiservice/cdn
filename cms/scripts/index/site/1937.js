@@ -12,4 +12,3 @@ filterClsIds = [9321, 9320];
 siteGUrls = ["aiis","good","china","soft","6tie","lzys"];
 siteBUrls = ["aiis","china"];
 
-third_opacity_css  ="opacity: 0.5;"
