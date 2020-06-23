@@ -330,35 +330,36 @@ if (typeof cur_location_url != "undefined") {
     //     o_data_ad_mobile="8434150992547607260-537";
     // }
 
-    if(cur_location_url.indexOf("china") !== -1){
-        site_enabled_alimama = true;
-        alimama_data_ad_336=61347;
-        alimama_data_ad_mobile=61348;
-    }else if(cur_location_url.indexOf("shitou") !== -1){
-        site_enabled_alimama = true;
-        alimama_data_ad_336=61339;
-        alimama_data_ad_mobile=59460;
-    }else if(cur_location_url.indexOf("tie") !== -1){
-        site_enabled_alimama = true;
-        alimama_data_ad_336=61357;
-        alimama_data_ad_mobile=61358;
-    }else if(cur_location_url.indexOf("soft") !== -1){
-        site_enabled_alimama = true;
-        alimama_data_ad_336=61355;
-        alimama_data_ad_mobile=61356;
-    }else if(cur_location_url.indexOf("lzys") !== -1){
-        site_enabled_alimama = true;
-        alimama_data_ad_336=61353;
-        alimama_data_ad_mobile=61354;
-    }else if(cur_location_url.indexOf("good") !== -1){
-        site_enabled_alimama = true;
-        alimama_data_ad_336=61363;
-        alimama_data_ad_mobile=61362;
-    }else if(cur_location_url.indexOf("lipan") !== -1){
-        site_enabled_alimama = true;
-        alimama_data_ad_336=61349;
-        alimama_data_ad_mobile=61364;
-    }
+    site_enabled_alimama = true;
+    // if(cur_location_url.indexOf("china") !== -1){
+    //     site_enabled_alimama = true;
+    //     alimama_data_ad_336=61347;
+    //     alimama_data_ad_mobile=61348;
+    // }else if(cur_location_url.indexOf("shitou") !== -1){
+    //     site_enabled_alimama = true;
+    //     alimama_data_ad_336=61339;
+    //     alimama_data_ad_mobile=59460;
+    // }else if(cur_location_url.indexOf("tie") !== -1){
+    //     site_enabled_alimama = true;
+    //     alimama_data_ad_336=61357;
+    //     alimama_data_ad_mobile=61358;
+    // }else if(cur_location_url.indexOf("soft") !== -1){
+    //     site_enabled_alimama = true;
+    //     alimama_data_ad_336=61355;
+    //     alimama_data_ad_mobile=61356;
+    // }else if(cur_location_url.indexOf("lzys") !== -1){
+    //     site_enabled_alimama = true;
+    //     alimama_data_ad_336=61353;
+    //     alimama_data_ad_mobile=61354;
+    // }else if(cur_location_url.indexOf("good") !== -1){
+    //     site_enabled_alimama = true;
+    //     alimama_data_ad_336=61363;
+    //     alimama_data_ad_mobile=61362;
+    // }else if(cur_location_url.indexOf("lipan") !== -1){
+    //     site_enabled_alimama = true;
+    //     alimama_data_ad_336=61349;
+    //     alimama_data_ad_mobile=61364;
+    // }
 
 }
 
@@ -404,10 +405,21 @@ function loadThirdAdsTemplate(id,mobile) {
 }
 
 function loadAlimama(loc) {
-    if(isMobile()){
-        loadAlimamaTemplate(alimama_data_ad_mobile);
-    }else{
-        loadAlimamaTemplate(alimama_data_ad_336);
+    //<a href="https://sm.ms/image/EsR7UuWyafBSr8T" target="_blank"><img src="https://i.loli.net/2020/06/23/EsR7UuWyafBSr8T.png" /></a>
+    //<a href="https://sm.ms/image/nrcutIM94aqlYXT" target="_blank"><img src="https://i.loli.net/2020/06/23/nrcutIM94aqlYXT.png" /></a>
+    // if(isMobile()){
+    //     loadAlimamaTemplate(alimama_data_ad_mobile);
+    // }else{
+    //     loadAlimamaTemplate(alimama_data_ad_336);
+    // }
+    if((loc === "cms_left_bottom")){
+        document.write('<div><img src="https://i.loli.net/2020/06/23/EsR7UuWyafBSr8T.png" /></div>');
+    }
+    if(loc === "cms_right_bottom"){
+        if(site_enabled_b){
+            document.write('<div style="margin:5px 0"><img src="https://i.loli.net/2020/06/23/EsR7UuWyafBSr8T.png" /></div>');
+        }
+        document.write('<div><img src="https://i.loli.net/2020/06/23/nrcutIM94aqlYXT.png" /></div>');
     }
 }
 function loadAlimamaTemplate(id) {
