@@ -19,7 +19,18 @@ if(typeof downPayParams != "undefined" && downPayParams){
     }
 }else{
     if (typeof cur_location_url != "undefined"&&cur_location_url.indexOf("download.html") === -1) {
-        var download_url =  "https://72k.us/file/1210232-448745322" ;
+        var downPayParams = {
+            id : "1",
+            sid : 1772,
+            title : "快速求书指南",
+            download_url : "https://72k.us/file/1210232-448745322",
+            img_url : "https://i.loli.net/2020/06/23/Ah6SG238kfcguDa.png"
+        };
+        var sb = [];
+        for (var i in downPayParams) {
+            sb.push(i + '=' + encodeURIComponent(downPayParams[i] || ''));
+        }
+        var download_url =  "/download.html?" + sb.join('&');
         document.writeln('<div class="alert alert-success" role="alert"> 暂无资源：<a href="'+download_url+'" target="_blank" class="alert-link">《点击下载快速求书指南》</a> </div>');
     }
 }
