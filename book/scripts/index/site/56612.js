@@ -5,6 +5,7 @@ g_data_ad_client = "ca-pub-4603891518763240";
 
 filterUrls = ["cate-5008","category-5008"];
 siteGUrls = ["biquge"];
+siteAlimamaUrls = ["biquge"];
 
 o_data_ad_300="";
 o_data_ad_300_right="";

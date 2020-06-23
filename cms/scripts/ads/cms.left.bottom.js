@@ -38,5 +38,7 @@ if(typeof site_enabled_b != "undefined" && site_enabled_b && typeof site_enabled
     loadGoogleAds();
 }else if(typeof site_enabled_b != "undefined" && site_enabled_b){
     loadBaiduAds("cms_left_bottom");
+}else if(typeof site_enabled_alimama != "undefined" && site_enabled_alimama){
+    loadAlimama("cms_left_bottom");
 }
 document.write('</div>');
