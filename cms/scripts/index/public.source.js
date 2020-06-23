@@ -411,20 +411,20 @@ function loadAlimama(loc) {
     //     loadAlimamaTemplate(alimama_data_ad_336);
     // }
     var ulr_qk = "javascript:void(0);";
-    var ulr_duoduo = "javascript:void(0);";
+    var ulr_pd = "javascript:void(0);";
     if(isMobile()){
         var today = formatDate();
         ulr_qk = "https://dawangde.me/?u=41968743&referer_code=bc87e230cd&v="+today;
-        ulr_duoduo = "http://edgh.ppyoucai.com/?r=818349942&d="+today+"&en=tickkek99&t=link&m=1&bt=1";
+        ulr_pd = "http://edgh.ppyoucai.com/?r=818349942&d="+today+"&en=tickkek99&t=link&m=1&bt=1";
     }
     if((loc === "cms_left_bottom")){
-        document.write('<div><a href="'+ulr_qk+'"><img src="https://i.loli.net/2020/06/23/EsR7UuWyafBSr8T.png" /></a></div>');
+        document.write('<div><a href="'+ulr_qk+'"><img src="https://cdn.jsdelivr.net/gh/aiservice/cdn/img/qiank.png" /></a></div>');
     }
     if(loc === "cms_right_bottom"){
         if(site_enabled_b){
-            document.write('<div><a href="'+ulr_qk+'"><img src="https://i.loli.net/2020/06/23/EsR7UuWyafBSr8T.png" /></a></div>');
+            document.write('<div><a href="'+ulr_qk+'"><img src="https://cdn.jsdelivr.net/gh/aiservice/cdn/img/qiank.png" /></a></div>');
         }
-        document.write('<div><a href="'+ulr_duoduo+'"><img src="https://i.loli.net/2020/06/23/nrcutIM94aqlYXT.png" /></a></div>');
+        document.write('<div><a href="'+ulr_pd+'"><img src="https://cdn.jsdelivr.net/gh/aiservice/cdn/img/pd.png" /></a></div>');
     }
 }
 function loadAlimamaTemplate(id) {
