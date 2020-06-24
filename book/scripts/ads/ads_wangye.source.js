@@ -380,30 +380,14 @@ function loadThirdAdsTemplate(id,mobile) {
     }
 }
 function loadAlimama(loc) {
-    var ulr_qk = "javascript:void(0);";
-    var ulr_pd = "javascript:void(0);";
-    var img_qk = "https://cdn.jsdelivr.net/gh/aiservice/cdn/img/qiank.png";
-    var img_pd = "https://cdn.jsdelivr.net/gh/aiservice/cdn/img/qiank.png";
-    if(isMobile()){
-        var today = formatDate();
-        ulr_qk = "https://dawangde.me/?u=41968743&referer_code=bc87e230cd&v="+today;
-        ulr_pd = "http://edgh.ppyoucai.com/?r=818349942&d="+today+"&en=tickkek99&t=link&m=1&bt=1";
-    }
-    if((loc === "cms_left_bottom")){
-        document.write('<div><a href="'+ulr_qk+'"><img src="'+img_qk+'" /></a></div>');
-    }
-    if(loc === "cms_right_bottom"){
-        if(site_enabled_b){
-            document.write('<div><a href="'+ulr_qk+'"><img src="'+img_qk+'" /></a></div>');
-        }
-        document.write('<div><a href="'+ulr_pd+'"><img src="'+img_pd+'" /></a></div>');
-    }
+    var id = "ads_iframe_"+ loc;
+    var w = 336;
+    var h = 280;
     if(loc === "pc_right_top"){
-        document.write('<div><a href="'+ulr_pd+'"><img src="'+img_pd+'" /></a></div>');
+         w = 250;
+         h = 250;
     }
-    if(loc === "m_bottom"){
-        document.write('<div><a href="'+ulr_qk+'"><img src="'+img_qk+'" /></a></div>');
-    }
+    document.write('<div> <iframe id="'+id+'" src="//cdn.cms.moujishu.com/ads.html?loc='+loc+'&id='+id+'&w='+w+'&h='+h+'" style="width: '+w+'px; border: none; height: '+h+'px;"></iframe></div>');
     // loadAlimamaTemplate(alimama_data_ad_336);
 }
 function loadAlimamaTemplate(id) {
