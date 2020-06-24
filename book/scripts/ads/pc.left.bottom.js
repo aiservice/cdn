@@ -47,6 +47,10 @@ if(typeof site_enabled_b != "undefined" && site_enabled_b && typeof site_enabled
     loadGoogleAds();
 }else if(typeof site_enabled_b != "undefined" && site_enabled_b){
     loadBaiduAds("pc_left_bottom");
+}else if(typeof site_enabled_alimama != "undefined" && site_enabled_alimama){
+    document.write('<div style="text-align: center">');
+    loadAlimama("pc_left_bottom");
+    document.write('</div>');
 }else if(typeof site_id != "undefined"&&site_id===19292){
     document.write('<ul class="adsul">');
     document.write('<li>');
