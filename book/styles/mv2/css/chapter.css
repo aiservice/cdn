@@ -1840,3 +1840,4 @@ mark { background: yellow; } mark.current { background: orange; }
 .help-right{top:30%;right:0;bottom:30%;width:35%}
 .help-center{top:30%;right:35%;bottom:30%;left:35%;border:2px dashed #fff}
 .shadow{position:fixed;top:0;right:0;bottom:0;left:0;z-index:99999}
+#bookDetailWrapper iframe,#bookDetailWrapper video { border: none;width: 100% !important;min-height: 375px;}
