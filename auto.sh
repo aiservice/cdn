@@ -1,8 +1,8 @@
 #!/bin/bash
 
-echo "gitautopush start..."
+echo "====git auto push start..."
 git add .
 git commit -m 'test'
 git push origin master
-echo "gitautopush end..."
+echo "====git auto push end..."
 
