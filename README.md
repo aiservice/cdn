@@ -7,7 +7,7 @@
     https://cdn.jsdelivr.net/gh/aiservice/cdn@3.1.3//The%20Pet%20Girl%20of%20Sakurasou.mp4
     https://cdn.jsdelivr.net/gh/aiservice/cdn/audio/test.m4a
 
-注意：版本号不是必需的1，是为了区分新旧资源，如果不使用版本号，将会直接引用最新资源，除此之外还可以使用某个范围内的版本，查看所有资源等，具体使用方法如下：
+注意：版本号不是必需的，是为了区分新旧资源，如果不使用版本号，将会直接引用最新资源，除此之外还可以使用某个范围内的版本，查看所有资源等，具体使用方法如下：
 
 // 加载任何Github发布、提交或分支
 https://cdn.jsdelivr.net/gh/user/repo@version/file
