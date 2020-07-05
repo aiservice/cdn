@@ -6,7 +6,7 @@ window.img_array_view = new Array();
 //     $(this).attr("src", "/images/no_img.png");
 // });
 $("img").on('error',function () {
-    $(this).attr("src", "/images/no_img.png");
+    $(this).attr("src", "https://cdn.jsdelivr.net/gh/aiservice/cdn/cms/images/no_img.png");
 });
 
 hotlinkview("wechat-view");
