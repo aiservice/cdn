@@ -8,7 +8,17 @@ function validateSite(){
         console.log(e)
     }
 }
-
+function popTip(msg,time){
+    if (typeof window.layer != "undefined"&&window.layer) {
+        var t = 3;
+        if (typeof time != "undefined"&&time) {
+            t = time;
+        }
+        layer.open({content:msg, skin: 'msg', time: t});
+    }else{
+        alert(msg);
+    }
+}
 function showNotice(){
     try {
         var privacy_policy;

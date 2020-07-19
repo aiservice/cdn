@@ -1035,4 +1035,4 @@ function importAsyncboxCss() {
 		}
 	}
 }
-var myfavflag=true;function addMyFav(b,a){if(myfavflag){$.jBox.tip("加入收藏中...","loading");window.setTimeout(function(){$.post("CsAjax.do?method=addMyFav",{book_id:b,book_name:a},function(c){if(c.ret==1){$.jBox.tip(c.msg,"success")}else{if(c.ret==0){myfavflag=false;$.jBox.tip(c.msg,"warning")}else{if(c.ret==-1){$.jBox.tip(c.msg,"warning")}}}})},2000)}else{$.jBox.tip("作品《"+a+"》已经存在于书架中！","warning")}};
+var myfavflag=true;function addMyFav(b,a){if(myfavflag){$.jBox.tip("加入收藏中...","loading");window.setTimeout(function(){$.post("/CsAjax.do?method=addMyFav",{book_id:b,book_name:a},function(c){if(c.ret==1){$.jBox.tip(c.msg,"success")}else{if(c.ret==0){myfavflag=false;$.jBox.tip(c.msg,"warning")}else{if(c.ret==-1){$.jBox.tip(c.msg,"warning")}}}})},2000)}else{$.jBox.tip("作品《"+a+"》已经存在于书架中！","warning")}};
