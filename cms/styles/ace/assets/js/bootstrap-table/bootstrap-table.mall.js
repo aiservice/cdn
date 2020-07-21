@@ -436,7 +436,7 @@ function biFormatter(value, row, index) {
     if (row.bi_chu_or_ru == 1) {
         return '<span class="label label-success">+ ' + value.toFixed(2) + '</span>'
     } else {
-        if (row.bi_get_type = -10) {
+        if (row.bi_get_type == -10) {
             var really_bi = (value - row.bi_rate).toFixed(2);
             return '<span class="label label-danger" data-toggle="tooltip" data-placement="right" title="到账金额：' + really_bi + ', 手续费：' + row.bi_rate.toFixed(2) + '">- (' + really_bi + '+' + row.bi_rate.toFixed(2) + ')</span>'
         } else {
