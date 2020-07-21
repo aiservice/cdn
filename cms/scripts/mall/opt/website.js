@@ -162,6 +162,9 @@ function toAdd() {
     $.each(columns_table, function (i, columns) {
         columns.value = "";
         columns.readonly = false;
+        if (columns.field == "is_spec_price" || columns.field == "is_sell") {
+            columns.value = "1";
+        }
     });
     $("#p_date_tip").empty();
     buildForm('container_data', columns_table);
@@ -174,7 +177,7 @@ function toEdit(index) {
         if (columns.shown && typeof columns.field != "undefined") {
             //console.log("columns.field:{}, value:{}", columns.field, data[columns.field])
             columns.value = data[columns.field]
-            if (columns.field == "site_domain") {
+            if (columns.field == "is_spec_price") {
                 columns.readonly = true;
             }
         }
