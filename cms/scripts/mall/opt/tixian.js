@@ -1,26 +1,18 @@
 var columns_table = [];
 columns_table.push({
-    title: '我的网站', field: 'pd_name', align: 'left', valign: 'middle', formatter: "siteLinkFormatter"
+    title: '类型', field: 'bi_get_memo', align: 'center', valign: 'middle',
 });
 columns_table.push({
-    title: '待上链接', field: 'rel_name', align: 'left', valign: 'middle', formatter: "siteMyFormatter"
+    title: '操作前金额', field: 'bi_no_before', align: 'center', class: 'hidden-480', formatter: "numFormatter"
 });
 columns_table.push({
-    class: 'hidden-480',
-    title: '总价', field: 'order_money', align: 'center', valign: 'middle', formatter: "numFormatter"
+    title: '本次金额', field: 'bi_no', align: 'center', valign: 'middle', formatter: "biFormatter"
 });
 columns_table.push({
-    title: '购买月数', field: 'order_num', align: 'center', valign: 'middle', class: 'hidden-480',
+    title: '操作后金额', field: 'bi_no_after', align: 'center', class: 'hidden-480', formatter: "numFormatter"
 });
 columns_table.push({
-    class: 'hidden-480',
     title: '时间', field: 'add_date', align: 'center', valign: 'middle', sortable: 'true', formatter: "dateFormatter"
-});
-columns_table.push({
-    title: '状态', field: 'order_state', align: 'center', valign: 'middle', formatter: "orderStateFormatter"
-});
-columns_table.push({
-    title: '操作', align: 'center', valign: 'middle', formatter: "optFormatter"
 });
 var $table;
 var first = true;
@@ -36,6 +28,9 @@ $(function () {
             if (first) {
                 console.log("init table...");
                 $table = initTable(columns_table, "?method=listAjax");
+                $table.on("load-success.bs.table", function (row, event) {
+                    $('[data-toggle="tooltip"]').tooltip()
+                });
                 first = false;
             }
         }
@@ -124,11 +119,6 @@ function tixianHandle(data) {
     }
 }
 
-function dateFormatter(value, row, index) {
-    var end_date = "<p>" + moment(row.end_date).format('YYYY-MM-DD HH:mm:ss') + "</p>";
-    return "<p>" + moment(value).format('YYYY-MM-DD HH:mm:ss') + "</p>" + end_date;
-}
-
 function toEdit() {
     $("#add_modal").modal('show');
 }
@@ -145,4 +135,8 @@ function submitForm() {
     if (vform.form()) {
         ajax("?method=updateBankAccount", "validation-form", "POST", saveHandle, true, true)
     }
+}
+
+function dateFormatter(value, row, index) {
+    return moment(value).format('YYYY-MM-DD HH:mm:ss');
 }

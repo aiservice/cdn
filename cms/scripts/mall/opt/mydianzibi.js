@@ -18,6 +18,9 @@ var $table;
 $(function () {
     $("#mydianzibi-left").addClass("active");
     $table = initTable(columns_table, "?method=listAjax");
+    $table.on("load-success.bs.table", function (row, event) {
+        $('[data-toggle="tooltip"]').tooltip()
+    });
     $('#begin_date').datetimepicker({
         locale: 'zh-cn',
         format: 'YYYY-MM-DD'
@@ -38,12 +41,3 @@ $(function () {
 function dateFormatter(value, row, index) {
     return moment(value).format('YYYY-MM-DD HH:mm:ss');
 }
-
-function biFormatter(value, row, index) {
-    if (row.bi_chu_or_ru == 1) {
-        return '<span class="label label-success">+ ' + value.toFixed(2) + '</span>'
-    } else {
-        return '<span class="label label-danger">- ' + value.toFixed(2) + '</span>'
-    }
-}
-

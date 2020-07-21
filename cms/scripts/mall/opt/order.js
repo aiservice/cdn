@@ -61,9 +61,11 @@ function siteLinkFormatter(value, row, index) {
 function orderStateFormatter(value, row, index) {
     if (value == 50) {
         return '<span class="label label-warning">' + orderStateObj[value] + '</span>'
-    } else if (value == 60 || value == 70) {
+    } else if (value == 60) {
         return '<span class="label label-success">' + orderStateObj[value] + '</span>'
+    } else if (value == 70) {
+        return '<span class="label label-info">' + orderStateObj[value] + '</span>'
     } else {
-        return '<span class="label label-default">- ' + value.toFixed(2) + '</span>'
+        return '<span class="label label-default">- ' + orderStateObj[value] + '</span>'
     }
 }

@@ -33,6 +33,9 @@ columns_table.push({
     shown: true, type: 'input', child_type: 'text', required: true, maxlength: 4
 });
 columns_table.push({
+    title: '销量', field: 'sales', align: 'center', class: 'hidden-480',
+});
+columns_table.push({
     title: '添加时间', field: 'add_date', align: 'center', valign: 'middle', class: 'hidden-480', sortable: 'true', formatter: "dateFormatter"
 });
 // columns_table.push({

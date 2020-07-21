@@ -38,10 +38,10 @@ $(function () {
     $table.on("uncheck-all.bs.table", function (row, event) {
         calcPrice();
     });
-    var lab_balance = parseFloat($("#lab_balance").text());
-    if (lab_balance <= 0) {
-        $("#id_chongzhi").show();
-    }
+    // var lab_balance = parseFloat($("#lab_balance").text());
+    // if (lab_balance <= 0) {
+    //     $("#id_chongzhi").show();
+    // }
 
     vform = $('#validation-form').validate({
         errorElement: 'div',
@@ -114,7 +114,7 @@ var month_data = [
 ];
 
 function pdNumFormatter(value, row, index) {
-    var html = "<select onchange='selectMonth("+row.id+")' name=\"pd_count\" id='sm_" + row.id + "' class='m_select'>";
+    var html = "<select onchange='selectMonth(" + row.id + ")' name=\"pd_count\" id='sm_" + row.id + "' class='m_select'>";
     $.each(month_data, function (idx, obj) {
         var select = "";
         if (value == obj.value) {
@@ -150,16 +150,17 @@ function saveHandle(data) {
 
 function selectMonth(id) {
     if (id) {
-        var value = $("#sm_"+id).val();
-        ajax("?method=update", {"id": id,"value":value}, "POST", function () {
+        var value = $("#sm_" + id).val();
+        ajax("?method=update", {"id": id, "value": value}, "POST", function () {
             calcPrice();
         }, false, true)
     }
 }
+
 function batchSelectMonth(obj) {
     if (obj.value) {
         $(".m_select").val(obj.value);
-        ajax("?method=update", {"value":obj.value}, "POST", function () {
+        ajax("?method=update", {"value": obj.value}, "POST", function () {
             calcPrice();
         }, false, true)
     }
@@ -170,17 +171,17 @@ function next() {
     if (ids && ids.length > 0) {
         var yue = parseFloat($("#lab_balance").text());
         var sum_price = parseFloat($("#lab_amount").text());
-        if(sum_price > yue){
+        if (sum_price > yue) {
             popTip("余额不足,请先充值");
             return false;
         }
         var addr = $("#shipping_addr").val();
-        if(addr == ""){
+        if (addr == "") {
             popTip("请先选择推广链接");
             return false;
         }
         myConfirm(function () {
-            ajax("?method=confirmOrder", {"ids": ids.join(","),"addr_id":addr}, "POST", confirmOrderHandle, true, true)
+            ajax("?method=confirmOrder", {"ids": ids.join(","), "addr_id": addr}, "POST", confirmOrderHandle, true, true)
         }, "确认要购买链接订单？", "确认")
     } else {
         popTip("请先选择要购买的链接")
@@ -195,35 +196,40 @@ columns_table_addr.push({
 });
 columns_table_addr.push({
     title: '链接地址', field: 'rel_addr', align: 'left', valign: 'middle',
-    shown: true, type: 'input', child_type: 'text', value:"http://",required: true, maxlength: 128
+    shown: true, type: 'input', child_type: 'text', value: "http://", required: true, maxlength: 128
 });
 
 function toAdd() {
     buildForm('container_data', columns_table_addr);
     $("#add_modal").modal({backdrop: true, keyboard: true, show: true});
 }
+
 function submitForm() {
     if (vform.form()) {
         ajax("?method=saveShippingAddr", "validation-form", "POST", getShippingAddr, true, true)
     }
 }
+
 function getShippingAddr() {
     $('#add_modal').modal('hide');
     ajax("?method=getShippingAddr", "validation-form", "POST", getShippingAddrHandle, false, true)
 }
+
 function getShippingAddrHandle(data) {
-    if(data.code == 1){
+    if (data.code == 1) {
         var html = "<option value=\"\">请选择要推广的链接</option>"
         var datas = data.datas;
         $.each(datas, function (idx, obj) {
-            html += '<option value="' + obj.id + '">' + obj.rel_name + '('+obj.rel_addr+')</option>';
+            html += '<option value="' + obj.id + '">' + obj.rel_name + '(' + obj.rel_addr + ')</option>';
         });
         $("#shipping_addr").empty().append(html);
     }
 }
+
 function confirmOrderHandle(data) {
-    if(data.code == 1){
+    if (data.code == 1) {
         $("#pay-opt").addClass("hidden");
-        $("#pay-success-tip").removeClass("hidden");;
+        $("#pay-success-tip").removeClass("hidden");
+        ;
     }
 }

@@ -257,6 +257,20 @@ function initTable(columns_table, url, table_id) {
     return pageTable(table_params);
 }
 
+function initTableSearch(columns_table, url, search_params) {
+    var tId = "data-table";
+    var table_params = {
+        table_id: tId,
+        ajax_url: url,
+        clickToSelect: true,
+        is_server: true,
+        columns: columns_table,
+        search_params: search_params
+        // onLoadSuccessFunc: onLoadSuccess
+    }
+    return pageTable(table_params);
+}
+
 function searchData(table_id) {
     var tId = "data-table";
     if (typeof table_id != "undefined") {
@@ -416,4 +430,17 @@ var myConfirm = function (callback, content, okButtonTxt, cancelButtonTxt) {
 
 function numFormatter(value, row, index) {
     return value.toFixed(2)
+}
+
+function biFormatter(value, row, index) {
+    if (row.bi_chu_or_ru == 1) {
+        return '<span class="label label-success">+ ' + value.toFixed(2) + '</span>'
+    } else {
+        if (row.bi_get_type = -10) {
+            var really_bi = (value - row.bi_rate).toFixed(2);
+            return '<span class="label label-danger" data-toggle="tooltip" data-placement="right" title="到账金额：' + really_bi + ', 手续费：' + row.bi_rate.toFixed(2) + '">- (' + really_bi + '+' + row.bi_rate.toFixed(2) + ')</span>'
+        } else {
+            return '<span class="label label-danger">- ' + value.toFixed(2) + '</span>'
+        }
+    }
 }
