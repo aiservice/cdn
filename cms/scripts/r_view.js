@@ -49,9 +49,11 @@ function hotlinkview(cls) {
                 img.remove();
             } else if (src.indexOf("tiebapic.baidu.com") !== -1) {
                 img.attr("src",src.replace("tiebapic.baidu.com", "cdn.tieba.moujishu.com"));
-            } else if (src.indexOf("imgsrc.baidu.com") !== -1) {
-                img.attr("src",src.replace("imgsrc.baidu.com", "cdn.baidu.moujishu.com"));
-            } else if (src.indexOf("kknews.cc") !== -1) {
+            }
+            // else if (src.indexOf("imgsrc.baidu.com") !== -1) {
+            //     img.attr("src",src.replace("imgsrc.baidu.com", "cdn.baidu.moujishu.com"));
+            // }
+            else if (src.indexOf("kknews.cc") !== -1) {
                // img.attr("src","//images.weserv.nl/?url="+src);
             } else if (src.indexOf("sinaimg.cn") !== -1) {
                 var cur_host = getHostName(src);
