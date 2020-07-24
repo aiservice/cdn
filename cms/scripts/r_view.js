@@ -47,10 +47,9 @@ function hotlinkview(cls) {
                 img.hide();
                 img.after(ifr);
                 img.remove();
+            } else if (src.indexOf("tiebapic.baidu.com") !== -1) {
+                img.attr("src",src.replace("tiebapic.baidu.com", "cdn.tieba.moujishu.com"));
             }
-            // else if (src.indexOf("tiebapic.baidu.com") !== -1) {
-            //     img.attr("src",src.replace("tiebapic.baidu.com", "cdn.tieba.moujishu.com"));
-            // }
             // else if (src.indexOf("imgsrc.baidu.com") !== -1) {
             //     img.attr("src",src.replace("imgsrc.baidu.com", "cdn.baidu.moujishu.com"));
             // }
