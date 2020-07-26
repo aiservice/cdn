@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>js在线压缩_css在线压缩 - 乐贴网Tools</title>
+    <meta name="keywords" content="javascript压缩,js在线压缩,js格式化">
+    <meta name="description" content="前端工具集javascript在线压缩,js在线压缩,js格式化,采用uglifyjs提供批量的js合并压缩，并支持拖拽上传和打包下载等功能。">
+    <link rel="stylesheet" href="css/basic.css" type="text/css"/>
+    <link rel="stylesheet" href="jsmin/minjs.css" type="text/css"/>
+</head>
+<body>
+<!-- 头部header开始-->
+<script type="text/javascript" src="js/public/header.js"></script>
+<div class="wrapper" style="text-align: center">
+    <script type="text/javascript" src="js/ads/auto.js"></script>
+</div>
+<!--头部header结束    -->
+<!-- 主体mainContent开始    -->
+<div id="mainContent" class="wrapper">
+    <div class="toolName">在线JS压缩 (采用uglifiyJS实现)</div>
+    <div class="toolUsing clearfix">
+        <div class="main minjs">
+            <div class="wrap">
+                <div class="tab">
+                    <div class="hd">
+                        <div class="active" data-pattern="paste">贴入代码压缩</div>
+                        <div data-pattern="upfile" class="">多文件合并压缩</div>
+                    </div>
+                    <div class="bd">
+                        <div class="active">
+                            <h4 class="caption">粘入代码：</h4>
+                            <textarea rows="15" id="jsTextarea">// 演示代码
+// JavaScript在线压缩工具使用Uglify压缩
+
+function test(arg01, arg02) {
+  if (arg01 &amp;&amp; arg02) {
+    var count = arg01 + arg02 * arg01
+    console.log(count);
+    return count;
+  }
+}</textarea>
+                        </div>
+                        <div class="">
+                            <textarea id="fileTextarea" class="fn-hide"></textarea>
+                            <input type="file" class="fn-hide" id="inputFile" multiple="multiple">
+                            <div class="drop-box" id="dorpBox">
+                                将文件拖入虚线框中或者点击可批量上传
+                                <br>
+                                Drop files here or click to upload.
+                            </div>
+                            <div class="list-box">
+                                <div class="tit-hd">
+                                    <h3>文件列表：</h3>
+                                    <p>(可以通过鼠标自由拖动顺序或删除已上传得文件，合并时会按照文件列表中的顺序输出。)</p>
+                                </div>
+                                <div class="list">
+                                    <ul id="items"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="options">
+                    <label>
+                        <input type="checkbox" id="mangle" checked="checked">压缩变量名称
+                    </label>
+                    <label>
+                        <input type="checkbox" id="comments" checked="checked">去除注释
+                    </label>
+                    <label>
+                        <input type="checkbox" id="dropConsole" checked="checked">去掉"console"
+                    </label>
+                    <label>
+                        <input type="checkbox" id="asciiOnly" checked="checked">中文转为unicode编码
+                    </label>
+                    <label>
+                        美化空格缩进数： <input type="text" placeholder="默认2" class="beautify-input" id="indentLevel">
+                    </label>
+                </div>
+                <div class="btn-area">
+                    <div class="btn-cyan" id="uglifiy" data-beautify="false">JS压缩</div>
+                    <div class="btn-cyan" id="beautify" data-beautify="true">JS美化</div>
+                    <div class="btn-cyan" id="css_pack" data-beautify="false">CSS压缩</div>
+                    <div class="btn-cyan" id="css_format" data-beautify="true">CSS美化</div>
+                    <div class="btn-blue" id="copy">复制</div>
+                    <div class="btn-blue" id="download">下载</div>
+                </div>
+                <div class="info" id="promptInfo">美化前: <span class="c-red">5.78 KiB</span> 美化后: <span class="c-green">6.34 KiB</span>
+                    数据变化: <span class="c-orgin">573 B</span> 美化耗时: <span class="c-green">34ms</span></div>
+            </div>
+        </div>
+
+
+        <div class="dialog fn-hide" id="slowMask">
+            <div class="dialog-box">
+                <div class="hd">
+                    <h3>疯狂转码中</h3>
+                </div>
+                <div class="ct">
+                    <p>运行时间由脚本的数据量决定，程序运行在浏览器中请勿切换页面，在本页等待。</p>
+                </div>
+                <div class="ft">
+                    <div class="btn-true">请稍后</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="dialog fn-hide" id="tipMask">
+            <div class="dialog-box">
+                <div class="ct">
+                    <p class="bigFont">复制成功</p>
+                </div>
+                <div class="ft">
+                    <div class="btn-close">关闭</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--主体mainContent结束    -->
+<!--尾部footer开始    -->
+<div id="footer">
+    <p class="wrapper"> 乐贴在线工具 版权所有</p>
+</div>
+<!-- 尾部footer结束    -->
+<script type="text/javascript" src="js/jquery.2.1.4.js"></script>
+<script type="text/javascript" src="jsmin/minjs.js"></script>
+<script type="text/javascript" src="js/public/tongji.js"></script>
+</body>
+</html>
