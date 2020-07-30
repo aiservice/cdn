@@ -8,8 +8,9 @@ g_data_ad_slot_recommend = "6053545297";
 g_data_ad_client = "ca-pub-4603891518763240";
 
 filterUrls = ["1385981","1407208"];
-siteGUrls = ["aiis","good","china","shitou","soft","xiaolipan","6tie","lzys"];
+siteGUrls = ["aiis","good","china","shitou","soft","xiaoli","6tie","lzys"];
 siteBUrls = ["aiis","china"];
+
 
 go_my_site=true;
 third_opacity_css  ="opacity: 0.9;";

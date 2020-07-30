@@ -1,35 +1,36 @@
-
-function validateSite(){
+function validateSite() {
     try {
-        if(self !== top){
+        if (self !== top) {
             top.location = self.location;
         }
-    }catch (e) {
+    } catch (e) {
         console.log(e)
     }
 }
-function popTip(msg,time){
-    if (typeof window.layer != "undefined"&&window.layer) {
+
+function popTip(msg, time) {
+    if (typeof window.layer != "undefined" && window.layer) {
         var t = 3;
-        if (typeof time != "undefined"&&time) {
+        if (typeof time != "undefined" && time) {
             t = time;
         }
-        layer.open({content:msg, skin: 'msg', time: t});
-    }else{
+        layer.open({content: msg, skin: 'msg', time: t});
+    } else {
         alert(msg);
     }
 }
-function showNotice(){
+
+function showNotice() {
     try {
         var privacy_policy;
-        if (typeof is_english != "undefined"&&is_english) {
+        if (typeof is_english != "undefined" && is_english) {
             privacy_policy = $('<div style=" color: #fff; background-color: #3b4045; left: 0; right: 0; bottom: 0; align-items: center; padding: 1em 1.8em; width: 100%; -ms-flex-direction: row; flex-direction: row; position: fixed; overflow: hidden; box-sizing: border-box; font-family: Helvetica,Calibri,Arial,sans-serif; font-size: 16px; line-height: 1.5em; display: -ms-flexbox; display: flex; -ms-flex-wrap: nowrap; flex-wrap: nowrap; z-index: 9999; "><span id="cookieconsent:desc" class="cc-message" style=" flex: 1; ">This website uses cookies to ensure you get the best experience on our website. <a href="https://uptimerobot.com/privacyPolicy" target="_blank" style=" opacity: .8; display: inline-block; padding: .2em; color: #fff; text-decoration: underline; ">Click for the cookie policy.</a></span><div class="cc-compliance" style=" display: flex; -ms-flex-align: center; align-items: center; -ms-flex-line-pack: justify; align-content: space-between; "><a style=" min-width: 140px; color: rgb(76, 167, 76); background-color: rgb(255, 255, 255); border-color: transparent; border-radius: 5px; flex: 1; display: block; padding: .4em .8em; font-size: .9em; font-weight: 700; border-width: 2px; border-style: solid; text-align: center; white-space: nowrap; ">Got it!</a></div></div>');
-        }else{
+        } else {
             privacy_policy = $('<div style=" color: #fff; background-color: #3b4045; left: 0; right: 0; bottom: 0; align-items: center; padding: 1em 1.8em; width: 100%; -ms-flex-direction: row; flex-direction: row; position: fixed; overflow: hidden; box-sizing: border-box; font-family: Helvetica,Calibri,Arial,sans-serif; font-size: 16px; line-height: 1.5em; display: -ms-flexbox; display: flex; -ms-flex-wrap: nowrap; flex-wrap: nowrap; z-index: 9999; "><span id="cookieconsent:desc" class="cc-message" style=" flex: 1; ">本网站使用cookie来确保您在我们的网站上获得最佳体验。. <a href="https://uptimerobot.com/privacyPolicy" target="_blank" style=" opacity: .8; display: inline-block; padding: .2em; color: #fff; text-decoration: underline; ">单击以获取Cookie政策。</a></span><div class="cc-compliance" style=" display: flex; -ms-flex-align: center; align-items: center; -ms-flex-line-pack: justify; align-content: space-between; "><a style=" min-width: 140px; color: rgb(76, 167, 76); background-color: rgb(255, 255, 255); border-color: transparent; border-radius: 5px; flex: 1; display: block; padding: .4em .8em; font-size: .9em; font-weight: 700; border-width: 2px; border-style: solid; text-align: center; white-space: nowrap; ">Got it!</a></div></div>');
         }
         if (!window.localStorage.getItem('site_privacy_policy')) {
             $('body').append(privacy_policy);
-            privacy_policy.click(function(e){
+            privacy_policy.click(function (e) {
                 e.stopPropagation();
                 privacy_policy.remove();
                 window.localStorage.setItem('site_privacy_policy', 1);
@@ -48,7 +49,7 @@ function showNotice(){
         //     }
         // }
 
-    }catch (e) {
+    } catch (e) {
         console.log(e)
     }
 }
@@ -56,24 +57,26 @@ function showNotice(){
 function isMobile() {
     return ua().match(/iphone|ipad|ipod|android|blackberry|iemobile|wpdesktop/i)
 }
+
 function ua() {
     return navigator.userAgent.toLowerCase()
 }
-function isWechat(){
+
+function isWechat() {
     return ua().match(/MicroMessenger/i);
 }
 
-function gEnabledAds(url){
-    if(typeof filterUrls != "undefined"){
-        for(var i = 0, len = filterUrls.length; i < len; i++){
+function gEnabledAds(url) {
+    if (typeof filterUrls != "undefined") {
+        for (var i = 0, len = filterUrls.length; i < len; i++) {
             console.log(filterUrls[i]);
             if (url.indexOf(filterUrls[i]) !== -1) {
                 return false;
             }
         }
     }
-    if(typeof filterClsIds != "undefined"&&typeof cls_id != "undefined"){
-        for(var i = 0, len = filterClsIds.length; i < len; i++){
+    if (typeof filterClsIds != "undefined" && typeof cls_id != "undefined") {
+        for (var i = 0, len = filterClsIds.length; i < len; i++) {
             console.log(filterClsIds[i]);
             if (cls_id === (filterClsIds[i])) {
                 return false;
@@ -82,9 +85,10 @@ function gEnabledAds(url){
     }
     return true;
 }
-function siteEnabledG(url){
-    if(typeof siteGUrls != "undefined"){
-        for(var i = 0, len = siteGUrls.length; i < len; i++){
+
+function siteEnabledG(url) {
+    if (typeof siteGUrls != "undefined") {
+        for (var i = 0, len = siteGUrls.length; i < len; i++) {
             console.log(siteGUrls[i]);
             if (url.indexOf(siteGUrls[i]) !== -1) {
                 return true;
@@ -93,9 +97,10 @@ function siteEnabledG(url){
     }
     return false;
 }
-function siteEnabledB(url){
-    if(typeof siteBUrls != "undefined"){
-        for(var i = 0, len = siteBUrls.length; i < len; i++){
+
+function siteEnabledB(url) {
+    if (typeof siteBUrls != "undefined") {
+        for (var i = 0, len = siteBUrls.length; i < len; i++) {
             console.log(siteBUrls[i]);
             if (url.indexOf(siteBUrls[i]) !== -1) {
                 return true;
@@ -106,32 +111,35 @@ function siteEnabledB(url){
 }
 
 function loadGoogleAds() {
-    if(g_enabled_ads){
+    if (g_enabled_ads) {
         document.write('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>');
-        document.write('<ins class="adsbygoogle" style="display:block" data-ad-client="'+g_data_ad_client+'" data-ad-slot="'+g_data_ad_slot_auto+'" data-ad-format="auto" data-full-width-responsive="true"></ins>');
+        document.write('<ins class="adsbygoogle" style="display:block" data-ad-client="' + g_data_ad_client + '" data-ad-slot="' + g_data_ad_slot_auto + '" data-ad-format="auto" data-full-width-responsive="true"></ins>');
         document.write('<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>');
     }
 }
+
 function loadGoogleAds468() {
-    if(g_enabled_ads) {
+    if (g_enabled_ads) {
         document.write('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>');
-        document.write('<ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px" data-ad-client="'+g_data_ad_client+'" data-ad-slot="'+g_data_ad_slot_468+'"></ins>');
+        document.write('<ins class="adsbygoogle" style="display:inline-block;width:468px;height:60px" data-ad-client="' + g_data_ad_client + '" data-ad-slot="' + g_data_ad_slot_468 + '"></ins>');
         document.write('<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>');
     }
 }
+
 function loadGoogleAdsRecommend() {
-    if(g_enabled_ads) {
+    if (g_enabled_ads) {
         document.write('<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>');
-        document.write('<ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="'+g_data_ad_client+'" data-ad-slot="' + g_data_ad_slot_recommend + '"></ins>');
+        document.write('<ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="' + g_data_ad_client + '" data-ad-slot="' + g_data_ad_slot_recommend + '"></ins>');
         document.write('<script> (adsbygoogle = window.adsbygoogle || []).push({});</script>');
     }
 }
+
 function loadBaiduAds(loc) {
     var tmpId = b_data_ad_mobile;
-    if((loc === "cms_left_bottom" && !isMobile())){
+    if ((loc === "cms_left_bottom" && !isMobile())) {
         tmpId = b_data_ad_336;
     }
-    if(loc === "cms_right_bottom"){
+    if (loc === "cms_right_bottom") {
         tmpId = b_data_ad_336_xuanting;
     }
     (function () {
@@ -144,7 +152,8 @@ function loadBaiduAds(loc) {
     })();
     document.write('<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script>');
 }
-function loadOther(){
+
+function loadOther() {
     // if(isMobile()&&!isWechat()){
     // var opacity = "";
     // if (typeof third_opacity_css != "undefined") {
@@ -175,9 +184,9 @@ function loadOther(){
     // }
 }
 
-function siteEnabledT(url){
-    if(typeof siteTUrls != "undefined"){
-        for(var i = 0, len = siteTUrls.length; i < len; i++){
+function siteEnabledT(url) {
+    if (typeof siteTUrls != "undefined") {
+        for (var i = 0, len = siteTUrls.length; i < len; i++) {
             console.log(siteTUrls[i]);
             if (url.indexOf(siteTUrls[i]) !== -1) {
                 return true;
@@ -186,9 +195,10 @@ function siteEnabledT(url){
     }
     return false;
 }
-function siteEnabledE(url){
-    if(typeof siteEUrls != "undefined"){
-        for(var i = 0, len = siteEUrls.length; i < len; i++){
+
+function siteEnabledE(url) {
+    if (typeof siteEUrls != "undefined") {
+        for (var i = 0, len = siteEUrls.length; i < len; i++) {
             console.log(siteEUrls[i]);
             if (url.indexOf(siteEUrls[i]) !== -1) {
                 return true;
@@ -197,72 +207,33 @@ function siteEnabledE(url){
     }
     return false;
 }
-function loadTerraAds(loc) {
-    if((loc === "cms_left_bottom") || loc === "pc_left_bottom"){
-        loadTerraAdsTemplate(t_data_ad_300,300,250);
-    }
-    if(loc === "cms_right_top"){
-        loadTerraAdsTemplate(t_data_ad_300,300,250);
-    }
-    if(loc === "cms_right_bottom"){
-        loadTerraAdsTemplate(t_data_ad_160_600,160,600);
-    }
-}
-
-function loadTerraAdsTemplate(key,width,height) {
-    if(!isWechat()){
-        atOptions = {
-            'key' : key,
-            'format' : 'iframe',
-            'height' : height,
-            'width' : width,
-            'params' : {}
-        };
-        document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.madcpms.com/'+key+'/invoke.js"></scr' + 'ipt>');
-    }
-}
 
 function loadExoAds(loc) {
-    if((loc === "cms_left_top") ){
+    if ((loc === "cms_left_top")) {
         //loadExoAdsTemplate(e_data_ad_300,"300","250");
     }
-    if((loc === "cms_left_bottom")){
-        loadExoAdsTemplate(e_data_ad_300,"300","250");
+    if ((loc === "cms_left_bottom")) {
+        loadExoAdsTemplate(e_data_ad_300, "300", "250");
     }
-    if(loc === "cms_right_top"){
-        loadExoAdsTemplate(e_data_ad_300,"300","250");
+    if (loc === "cms_right_top") {
+        loadExoAdsTemplate(e_data_ad_300, "300", "250");
     }
-    if(loc === "cms_right_bottom"){
-        loadExoAdsTemplate(e_data_ad_300,"160","600");
+    if (loc === "cms_right_bottom") {
+        loadExoAdsTemplate(e_data_ad_300, "300", "250");
     }
 }
-function loadExoAdsTemplate(idzone,width,height) {
+
+function loadExoAdsTemplate(idzone, width, height) {
     //if(!isWechat()){
     var opacity = "";
     if (typeof third_opacity_css != "undefined") {
         opacity = third_opacity_css;
     }
     ad_idzone = idzone, ad_width = width, ad_height = height;
-    document.write('<div style="'+opacity+'">');
+    document.write('<div style="' + opacity + '">');
     document.write('<script type="text/javascript" src="https://a.exdynsrv.com/ads.js"></script>');
     document.write('</div>');
     //}
-}
-function loadExoAdsWidgetTemplate(idzone) {
-    //if(!isWechat()){
-    document.write('<script type="text/javascript" data-idzone="'+idzone+'" src="https://a.exdynsrv.com/nativeads.js" ></script>');
-    //}
-}
-function loadExoAdsVideoTemplate(idzone) {
-    exoOpts = {
-        // postroll: {},
-        // pause: { padding: 1 },
-        // offsetY: +40,
-        idzone_300x250 : idzone,
-        preroll: {},
-        show_thumb: 1
-    };
-    document.write('<script type="text/javascript" src="https://a.exdynsrv.com/invideo.js"></script>');
 }
 
 function getHostName(url) {
@@ -274,12 +245,12 @@ function getHostName(url) {
     }
 }
 
-function goNewDomain(){
+function goNewDomain() {
     if (typeof app_domain != "undefined" && typeof cur_location_url != "undefined" && typeof go_my_site != "undefined" && go_my_site) {
-        if(!isLocal(cur_location_url)){
+        if (!isLocal(cur_location_url)) {
             var cur_host = getHostName(cur_location_url);
             if (cur_host && (cur_host !== app_domain)) {
-                location.href = cur_location_url.replace(cur_host,app_domain);
+                location.href = cur_location_url.replace(cur_host, app_domain);
             }
         }
     }
@@ -294,53 +265,49 @@ cur_location_url = window.location.href;
 goNewDomain();
 showNotice();
 g_enabled_ads = gEnabledAds(cur_location_url);
-console.log("g_enabled_ads:"+g_enabled_ads);
+console.log("g_enabled_ads:" + g_enabled_ads);
 site_enabled_g = siteEnabledG(cur_location_url);
-console.log("site_enabled_g:"+site_enabled_g);
+console.log("site_enabled_g:" + site_enabled_g);
 site_enabled_b = siteEnabledB(cur_location_url);
-console.log("site_enabled_b:"+site_enabled_b);
-site_enabled_t = siteEnabledT(cur_location_url);
-console.log("site_enabled_t:"+site_enabled_t);
-site_enabled_e = siteEnabledE(cur_location_url);
-console.log("site_enabled_e:"+site_enabled_e);
+console.log("site_enabled_b:" + site_enabled_b);
+
+// site_enabled_e = siteEnabledE(cur_location_url);
+// console.log("site_enabled_e:" + site_enabled_e);
 
 // site_enabled_other = siteEnabledOther(cur_location_url);
 // console.log("site_enabled_other:"+site_enabled_other);
 
 if (typeof cur_location_url != "undefined") {
-    // if(cur_location_url.indexOf("china") !== -1){
-    //     site_enabled_other = true;
-    //     o_data_ad_300="";
-    //     o_data_ad_300_right="";
-    //     o_data_ad_mobile="8434150992547607260-532";
-    // }else if(cur_location_url.indexOf("tie") !== -1){
-    //     site_enabled_other = true;
-    //     o_data_ad_300="";
-    //     o_data_ad_300_right="";
-    //     o_data_ad_mobile="8434150992547607260-533";
-    // }else if(cur_location_url.indexOf("soft") !== -1){
-    //     site_enabled_other = true;
-    //     o_data_ad_300="";
-    //     o_data_ad_300_right="";
-    //     o_data_ad_mobile="8434150992547607260-534";
-    // }else if(cur_location_url.indexOf("lzys") !== -1){
-    //     site_enabled_other = true;
-    //     o_data_ad_300="";
-    //     o_data_ad_300_right="";
-    //     o_data_ad_mobile="8434150992547607260-535";
-    // }else if(cur_location_url.indexOf("shitou") !== -1){
-    //     site_enabled_other = true;
-    //     o_data_ad_300="";
-    //     o_data_ad_300_right="";
-    //     o_data_ad_mobile="8434150992547607260-536";
-    // }else if(cur_location_url.indexOf("good") !== -1){
-    //     site_enabled_other = true;
-    //     o_data_ad_300="";
-    //     o_data_ad_300_right="";
-    //     o_data_ad_mobile="8434150992547607260-537";
-    // }
+    if (cur_location_url.indexOf("china") !== -1) {
+        site_enabled_e = true;
+        e_data_ad_300 = "3707973";
+    } else if (cur_location_url.indexOf("tie") !== -1) {
+        site_enabled_e = true;
+        e_data_ad_300 = "3707985";
+    } else if (cur_location_url.indexOf("soft") !== -1) {
+        site_enabled_e = true;
+        e_data_ad_300 = "3707977";
+    } else if (cur_location_url.indexOf("lzys") !== -1) {
+        site_enabled_e = true;
+        e_data_ad_300 = "3708139";
+    } else if (cur_location_url.indexOf("shitou") !== -1) {
+        site_enabled_e = true;
+        e_data_ad_300 = "3707189";
+    } else if (cur_location_url.indexOf("good") !== -1) {
+        site_enabled_e = true;
+        e_data_ad_300 = "3801715";
+    } else if (cur_location_url.indexOf("wuxia") !== -1) {
+        site_enabled_e = true;
+        e_data_ad_300 = "3702729";
+    } else if (cur_location_url.indexOf("xiaoli") !== -1) {
+        site_enabled_e = true;
+        e_data_ad_300 = "3900380";
+    }
 
     site_enabled_alimama = true;
+    if (cur_location_url.indexOf("wuxia") !== -1) {
+        site_enabled_alimama = false;
+    }
     // if(cur_location_url.indexOf("china") !== -1){
     //     site_enabled_alimama = true;
     //     alimama_data_ad_336=61347;
@@ -373,9 +340,9 @@ if (typeof cur_location_url != "undefined") {
 
 }
 
-function siteEnabledOther(url){
-    if(typeof siteOtherUrls != "undefined"){
-        for(var i = 0, len = siteOtherUrls.length; i < len; i++){
+function siteEnabledOther(url) {
+    if (typeof siteOtherUrls != "undefined") {
+        for (var i = 0, len = siteOtherUrls.length; i < len; i++) {
             console.log(siteOtherUrls[i]);
             if (url.indexOf(siteOtherUrls[i]) !== -1) {
                 return true;
@@ -386,28 +353,28 @@ function siteEnabledOther(url){
 }
 
 function loadThirdAds(loc) {
-    if((loc === "cms_left_bottom")){
-        if(isMobile()){
-            loadThirdAdsTemplate(o_data_ad_mobile,true);
-        } else{
+    if ((loc === "cms_left_bottom")) {
+        if (isMobile()) {
+            loadThirdAdsTemplate(o_data_ad_mobile, true);
+        } else {
             loadThirdAdsTemplate(o_data_ad_300);
         }
     }
-    if(loc === "cms_right_bottom"){
+    if (loc === "cms_right_bottom") {
         loadThirdAdsTemplate(o_data_ad_300_right);
     }
 }
 
-function loadThirdAdsTemplate(id,mobile) {
+function loadThirdAdsTemplate(id, mobile) {
     if (typeof id != "undefined" || id != "") {
         var opacity = "";
         if (typeof third_opacity_css != "undefined") {
             opacity = third_opacity_css;
         }
-        if(mobile){
-            document.write('<div style="'+opacity+'"><ins style="display:none!important" id="' + id + '"></ins></div>');
-        }else{
-            document.write('<div style="display: inline-block;'+opacity+'"><ins style="display:none!important" id="' + id + '"></ins></div>');
+        if (mobile) {
+            document.write('<div style="' + opacity + '"><ins style="display:none!important" id="' + id + '"></ins></div>');
+        } else {
+            document.write('<div style="display: inline-block;' + opacity + '"><ins style="display:none!important" id="' + id + '"></ins></div>');
         }
         (window.adbyunion = window.adbyunion || []).push(id);
         document.write('<script async defer src="https://www.fjsjsj.com/o.js"></script>');
@@ -420,20 +387,24 @@ function loadAlimama(loc) {
     // }else{
     //     loadAlimamaTemplate(alimama_data_ad_336);
     // }
-    var id = "ads_iframe_"+ loc;
+    var id = "ads_iframe_" + loc;
     var w = 336;
     var h = 280;
-    document.write('<div> <iframe id="'+id+'" src="//cdn.cms.moujishu.com/ads.html?loc='+loc+'&id='+id+'&w='+w+'&h='+h+'" style="width: '+w+'px; border: none; height: '+h+'px;"></iframe></div>');
+    document.write('<div> <iframe id="' + id + '" src="//cdn.cms.moujishu.com/ads.html?loc=' + loc + '&id=' + id + '&w=' + w + '&h=' + h + '" style="width: ' + w + 'px; border: none; height: ' + h + 'px;"></iframe></div>');
 }
+
 function loadAlimamaTemplate(id) {
     if (typeof id != "undefined" || id != "") {
         var opacity = "";
         if (typeof third_opacity_css != "undefined") {
             opacity = third_opacity_css;
         }
-        ufid=id; ufwidth=336; ufheight=280; ufdomain="//js.penxiangge.com";
-        document.write('<div style="'+opacity+'">');
-        document.write("<scr"+"ipt type='text/javascript' src='"+ufdomain+"/Include/data_hf'></scri"+"pt>");
+        ufid = id;
+        ufwidth = 336;
+        ufheight = 280;
+        ufdomain = "//js.penxiangge.com";
+        document.write('<div style="' + opacity + '">');
+        document.write("<scr" + "ipt type='text/javascript' src='" + ufdomain + "/Include/data_hf'></scri" + "pt>");
         document.write('</div>');
         // document.write('<a style="display:none!important" id="tanx-a-'+id+'"></a>');
         // tanx_s = document.createElement("script");
@@ -447,7 +418,7 @@ function loadAlimamaTemplate(id) {
     }
 }
 
-function formatDate(){
+function formatDate() {
     // 获取当前日期
     var date = new Date();
 

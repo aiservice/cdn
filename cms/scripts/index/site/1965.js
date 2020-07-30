@@ -7,5 +7,5 @@ g_data_ad_slot_recommend = "6053545297";
 g_data_ad_client = "ca-pub-4603891518763240";
 
 filterUrls = ["xxxxx"];
-siteGUrls = ["aiis","good","china","shitou","soft","biquge","6tie","lzys"];
+siteGUrls = ["aiis","good","china","shitou","soft","xiaoli","6tie","lzys"];
 siteBUrls = ["aiis","china"];
