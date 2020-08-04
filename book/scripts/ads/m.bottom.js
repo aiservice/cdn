@@ -2,9 +2,6 @@ document.write('<div class="ads_mobile">');
 if(typeof site_enabled_b != "undefined" && site_enabled_b){
     loadBaiduAds("m_bottom");
 }
-if(typeof site_enabled_t != "undefined" && site_enabled_t){
-    loadTerraAds("m_bottom");
-}
 if(typeof site_enabled_e != "undefined" && site_enabled_e){
     loadExoAds("m_bottom");
 }

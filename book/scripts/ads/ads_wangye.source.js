@@ -103,17 +103,7 @@ function siteEnabledB(url){
     }
     return false;
 }
-function siteEnabledT(url){
-    if(typeof siteTUrls != "undefined"){
-        for(var i = 0, len = siteTUrls.length; i < len; i++){
-            console.log(siteTUrls[i]);
-            if (url.indexOf(siteTUrls[i]) !== -1) {
-                return true;
-            }
-        }
-    }
-    return false;
-}
+
 function siteEnabledE(url){
     if(typeof siteEUrls != "undefined"){
         for(var i = 0, len = siteEUrls.length; i < len; i++){
@@ -175,63 +165,29 @@ function loadBaiduAds(loc) {
     document.write('<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script>');
 }
 
-function loadTerraAds(loc) {
-    if((loc === "cms_left_bottom") || loc === "pc_left_bottom"){
-        loadTerraAdsTemplate(t_data_ad_300,300,250);
-    }
-    if(loc === "cms_right_bottom"){
-        loadTerraAdsTemplate(t_data_ad_160_600,160,600);
-    }
-    if(loc === "pc_468"){
-        loadTerraAdsTemplate(t_data_ad_468,468,60);
-    }
-    if(loc === "pc_bottom"){
-        loadTerraAdsTemplate(t_data_ad_728,728,90);
-    }
-    if(loc === "pc_right_top"){
-        loadTerraAdsTemplate(t_data_ad_300,300,250);
-    }
-    if(loc === "m_bottom"){
-        loadTerraAdsTemplate(t_data_ad_mobile,320,50);
-    }
-}
-
-function loadTerraAdsTemplate(key,width,height) {
-    if(!isWechat()){
-        atOptions = {
-            'key' : key,
-            'format' : 'iframe',
-            'height' : height,
-            'width' : width,
-            'params' : {}
-        };
-        document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.madcpms.com/'+key+'/invoke.js"></scr' + 'ipt>');
-    }
-}
-
 function loadExoAds(loc) {
-    if((loc === "cms_left_bottom") || loc === "pc_left_bottom"){
-        loadExoAdsTemplate(e_data_ad_300,"300","250");
-    }
-    if(loc === "cms_right_bottom"){
-        loadExoAdsTemplate(e_data_ad_160_600,"160","600");
-    }
-    if(loc === "pc_468"){
-        loadExoAdsTemplate(e_data_ad_468,"468","60");
-    }
-    if(loc === "pc_bottom"){
-        loadExoAdsTemplate(e_data_ad_728,"728","90");
-    }
-    if(loc === "pc_right_top"){
-        loadExoAdsTemplate(e_data_ad_300,"300","250");
-    }
-    if(loc === "m_bottom"){
-        //loadExoAdsTemplate(e_data_ad_mobile,"300","100")
-        loadExoAdsTemplate(e_data_ad_300,"300","250");
-    }
-    if(loc === "m_top"){
-        loadExoAdsTemplate(e_data_ad_mobile,"300","100")
-    }
+    loadExoAdsTemplate(e_data_ad_300,"300","250");
+    // if((loc === "cms_left_bottom") || loc === "pc_left_bottom"){
+    //     loadExoAdsTemplate(e_data_ad_300,"300","250");
+    // }
+    // if(loc === "cms_right_bottom"){
+    //     loadExoAdsTemplate(e_data_ad_160_600,"160","600");
+    // }
+    // if(loc === "pc_468"){
+    //     loadExoAdsTemplate(e_data_ad_468,"468","60");
+    // }
+    // if(loc === "pc_bottom"){
+    //     loadExoAdsTemplate(e_data_ad_728,"728","90");
+    // }
+    // if(loc === "pc_right_top"){
+    //     loadExoAdsTemplate(e_data_ad_300,"300","250");
+    // }
+    // if(loc === "m_bottom"){
+    //     loadExoAdsTemplate(e_data_ad_300,"300","250");
+    // }
+    // if(loc === "m_top"){
+    //     loadExoAdsTemplate(e_data_ad_mobile,"300","100")
+    // }
 }
 
 function loadExoAdsTemplate(idzone,width,height) {
@@ -310,8 +266,6 @@ site_enabled_g = siteEnabledG(cur_location_url);
 console.log("site_enabled_g:"+site_enabled_g);
 site_enabled_b = siteEnabledB(cur_location_url);
 console.log("site_enabled_b:"+site_enabled_b);
-site_enabled_t = siteEnabledT(cur_location_url);
-console.log("site_enabled_t:"+site_enabled_t)
 site_enabled_e = siteEnabledE(cur_location_url);
 console.log("site_enabled_e:"+site_enabled_e);
 
