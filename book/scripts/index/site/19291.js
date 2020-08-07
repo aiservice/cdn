@@ -4,7 +4,7 @@ g_data_ad_slot_recommend = "7657556062";
 g_data_ad_client = "ca-pub-4603891518763240";
 
 filterUrls = ["cate-5008","category-5008"];
-siteGUrls = ["xxx"];
+siteGUrls = ["biquge"];
 siteAlimamaUrls = ["feiku"];
 
 o_data_ad_300="";
