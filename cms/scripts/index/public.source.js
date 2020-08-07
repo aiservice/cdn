@@ -154,14 +154,15 @@ function loadBaiduAds(loc) {
 }
 
 function loadOther() {
-    // if(isMobile()&&!isWechat()){
-    // var opacity = "";
-    // if (typeof third_opacity_css != "undefined") {
-    //     opacity = third_opacity_css;
-    // }
-    // document.writeln('<div style="'+opacity+'">');
-    // document.writeln('<scri'+'pt src="https://js.qsk666.com/5/2849/7477/20/27.js"> </scri'+'pt>');
-    // document.writeln('</div>');
+    if (isMobile() && !isWechat()) {
+        var opacity = "";
+        // if (typeof third_opacity_css != "undefined") {
+        //     opacity = third_opacity_css;
+        // }
+        document.writeln('<div style="' + opacity + '">');
+        document.writeln('<scri' + 'pt src="//spl.ztvx8.com/wlzys5.js"> </scri' + 'pt>');
+        document.writeln('</div>');
+    }
 
     // document.write('<div> <iframe id="ads_iframe" src="/ads.html" style="width: 100%; border: none; height: auto;"></iframe></div>');
     // var ads_iframe = document.getElementById('ads_iframe');
