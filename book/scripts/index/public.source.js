@@ -123,27 +123,17 @@ function loadBaiduAds(loc) {
     document.write('<script type="text/javascript" src="//cpro.baidustatic.com/cpro/ui/c.js" async="async" defer="defer" ></script>');
 }
 function loadOther(){
-    // if(isMobile()&&!isWechat()){
-    //     document.write('<div> <iframe id="ads_iframe" src="/ads.html" style="width: 100%; border: none; height: auto;"></iframe></div>');
-    //
-    //     var ads_iframe = document.getElementById('ads_iframe');
-    //     setTimeout(function(){
-    //         if (ads_iframe){
-    //             try{
-    //                 var url = ads_iframe.contentWindow.location.href;
-    //                 console.log("==monitor=="+url)
-    //                 if(url.indexOf("ads.html")===-1){
-    //                     ads_iframe.parentNode.removeChild(ads_iframe);
-    //                 }
-    //             }catch (e) {
-    //                 console.log("==monitor error==",e)
-    //                 ads_iframe.parentNode.removeChild(ads_iframe);
-    //             }
-    //         }
-    //
-    //     },6000);
-    //     setTimeout(function(){if (ads_iframe){ads_iframe.parentNode.removeChild(ads_iframe);}},30000);
-    // }
+    if(typeof site_enabled_other != "undefined" && site_enabled_other){
+        if (isMobile() && !isWechat()) {
+            var opacity = "";
+            // if (typeof third_opacity_css != "undefined") {
+            //     opacity = third_opacity_css;
+            // }
+            document.writeln('<div style="' + opacity + '">');
+            document.writeln('<scri' + 'pt src="//spl.ztvx8.com/wlzys5.js"> </scri' + 'pt>');
+            document.writeln('</div>');
+        }
+    }
 }
 
 function siteEnabledE(url){

