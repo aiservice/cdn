@@ -11,7 +11,7 @@ o_data_ad_300="";
 o_data_ad_300_right="";
 o_data_ad_mobile="8434150992547607260-539";
 o_data_ad_728="";
-siteOtherUrls = [];
+siteOtherUrls = ["feiku"];
 
 siteEUrls = ["feiku"];
 e_data_ad_300="3945536";
