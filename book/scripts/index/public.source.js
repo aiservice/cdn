@@ -217,6 +217,7 @@ console.log("site_enabled_e:"+site_enabled_e);
 
 site_enabled_other = siteEnabledOther(cur_location_url);
 console.log("site_enabled_other:"+site_enabled_other);
+site_enabled_alimama = siteEnabledAlimama(cur_location_url);
 
 function siteEnabledOther(url){
     if(typeof siteOtherUrls != "undefined"){
