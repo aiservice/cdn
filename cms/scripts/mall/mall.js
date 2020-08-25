@@ -1,5 +1,8 @@
 $(document).ready(function () {
-    setTimeout(isLogin, 3000)
+    var cur_location_url = window.location.href;
+    if (cur_location_url.indexOf("customer") !== -1) {
+        setTimeout(isLogin, 3000)
+    }
 });
 
 function addToCart(id) {
@@ -139,4 +142,85 @@ function popTip(msg, time) {
     } else {
         alert(msg);
     }
+}
+
+//将form里面的内容序列化成json数据
+$.fn.serializeFormJson = function (otherString) {
+    try {
+        var serializeObj = {},
+            array = this.serializeArray();
+        $(array).each(function () {
+            if (serializeObj[this.name]) {
+                serializeObj[this.name] += ';' + this.value;
+            } else {
+                serializeObj[this.name] = this.value;
+            }
+        });
+        if (otherString != undefined) {
+            var otherArray = otherString.split(';');
+            $(otherArray).each(function () {
+                var otherSplitArray = this.split(':');
+                serializeObj[otherSplitArray[0]] = otherSplitArray[1];
+            });
+        }
+        return serializeObj;
+    } catch (e) {
+        console.log(e);
+    }
+    return null;
+};
+
+//将josn对象赋值给form--》即数据回显
+$.fn.setForm = function (jsonValue) {
+    try {
+        var obj = this;
+        $.each(jsonValue, function (name, ival) {
+            var $oinput = obj.find("input[name=" + name + "]");
+            if ($oinput.attr("type") == "checkbox") {
+                if (ival !== null) {
+                    var checkboxObj = $("[name=" + name + "]");
+                    var checkArray = ival.split(";");
+                    for (var i = 0; i < checkboxObj.length; i++) {
+                        for (var j = 0; j < checkArray.length; j++) {
+                            if (checkboxObj[i].value == checkArray[j]) {
+                                checkboxObj[i].click();
+                            }
+                        }
+                    }
+                }
+            } else if ($oinput.attr("type") == "radio") {
+                $oinput.each(function () {
+                    var radioObj = $("[name=" + name + "]");
+                    for (var i = 0; i < radioObj.length; i++) {
+                        if (radioObj[i].value == ival) {
+                            radioObj[i].click();
+                        }
+                    }
+                });
+            } else if ($oinput.attr("type") == "textarea") {
+                obj.find("[name=" + name + "]").html(ival);
+            } else {
+                obj.find("[name=" + name + "]").val(ival);
+            }
+        })
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+
+function isIOS() {
+    return ua().match(/iphone|ipad|ipod/i)
+}
+
+function isMobile() {
+    return ua().match(/iphone|ipad|ipod|android|blackberry|iemobile|wpdesktop/i)
+}
+
+function ua() {
+    return navigator.userAgent.toLowerCase()
+}
+
+function isWechat() {
+    return ua().match(/micromessenger/i);
 }

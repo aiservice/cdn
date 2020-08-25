@@ -63,7 +63,7 @@ function ua() {
 }
 
 function isWechat() {
-    return ua().match(/MicroMessenger/i);
+    return ua().match(/micromessenger/i);
 }
 
 function gEnabledAds(url) {
