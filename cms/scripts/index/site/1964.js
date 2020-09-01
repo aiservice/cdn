@@ -8,7 +8,7 @@ g_data_ad_client = "ca-pub-4603891518763240";
 
 filterUrls = ["xxxxx"];
 filterSiteIds = [1937];
-siteGUrls = ["china"];
+siteGUrls = ["aiis","good","china","shitou","soft","xiaoli","6tie","lzys","feiku","biquge"];
 siteBUrls = ["aiis","china"];
 
-go_my_site=true;
+go_my_site=false;
