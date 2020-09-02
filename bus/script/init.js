@@ -86,7 +86,7 @@ $(function () {
             return false;
         }
         $.ajax({
-            url: "https://api.ossoft.cn/v1/bus/" + lineNumber + "/location",
+            url: "https://api.book.moujishu.com/v1/bus/" + lineNumber + "/location",
             type: "GET",
             dataType: "jsonp",
             success: function (datas) {
@@ -186,7 +186,7 @@ $(function () {
 
     var addMarker = function (point, map) {
         if (!icon) {
-            icon = createIcon("img/bus.png");
+            icon = createIcon("https://cdn.jsdelivr.net/gh/aiservice/cdn/bus/img/bus.png");
         }
         var marker = new BMap.Marker(point, {icon: icon});
         var markerPulse = new ComplexCustomOverlay(point, marker);
