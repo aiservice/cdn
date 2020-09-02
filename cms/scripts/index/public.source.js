@@ -279,31 +279,32 @@ console.log("site_enabled_b:" + site_enabled_b);
 // console.log("site_enabled_other:"+site_enabled_other);
 
 if (typeof cur_location_url != "undefined") {
-    if (cur_location_url.indexOf("china") !== -1) {
-        site_enabled_e = true;
-        e_data_ad_300 = "3707973";
-    } else if (cur_location_url.indexOf("tie") !== -1) {
-        site_enabled_e = true;
-        e_data_ad_300 = "3707985";
-    } else if (cur_location_url.indexOf("soft") !== -1) {
-        site_enabled_e = true;
-        e_data_ad_300 = "3707977";
-    } else if (cur_location_url.indexOf("lzys") !== -1) {
-        site_enabled_e = true;
-        e_data_ad_300 = "3708139";
-    } else if (cur_location_url.indexOf("shitou") !== -1) {
-        site_enabled_e = true;
-        e_data_ad_300 = "3707189";
-    } else if (cur_location_url.indexOf("good") !== -1) {
-        site_enabled_e = true;
-        e_data_ad_300 = "3801715";
-    } else if (cur_location_url.indexOf("wuxia") !== -1) {
-        site_enabled_e = true;
-        e_data_ad_300 = "3702729";
-    } else if (cur_location_url.indexOf("xiaoli") !== -1) {
-        site_enabled_e = true;
-        e_data_ad_300 = "3900380";
-    }
+    site_enabled_e = false;
+    // if (cur_location_url.indexOf("china") !== -1) {
+    //     site_enabled_e = true;
+    //     e_data_ad_300 = "3707973";
+    // } else if (cur_location_url.indexOf("tie") !== -1) {
+    //     site_enabled_e = true;
+    //     e_data_ad_300 = "3707985";
+    // } else if (cur_location_url.indexOf("soft") !== -1) {
+    //     site_enabled_e = true;
+    //     e_data_ad_300 = "3707977";
+    // } else if (cur_location_url.indexOf("lzys") !== -1) {
+    //     site_enabled_e = true;
+    //     e_data_ad_300 = "3708139";
+    // } else if (cur_location_url.indexOf("shitou") !== -1) {
+    //     site_enabled_e = true;
+    //     e_data_ad_300 = "3707189";
+    // } else if (cur_location_url.indexOf("good") !== -1) {
+    //     site_enabled_e = true;
+    //     e_data_ad_300 = "3801715";
+    // } else if (cur_location_url.indexOf("wuxia") !== -1) {
+    //     site_enabled_e = true;
+    //     e_data_ad_300 = "3702729";
+    // } else if (cur_location_url.indexOf("xiaoli") !== -1) {
+    //     site_enabled_e = true;
+    //     e_data_ad_300 = "3900380";
+    // }
 
     site_enabled_alimama = true;
     if (cur_location_url.indexOf("wuxia") !== -1) {
