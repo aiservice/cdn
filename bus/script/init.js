@@ -208,7 +208,7 @@ $(function () {
         return icon;
     };
     var addShang = function () {
-        var html = '<div style=" position: fixed; bottom: 2.5%; right: 2%; "><a href="http://www.ossoft.cn/dashang.html" target="_blank" class="btn" style="padding: 5px;color: #ec7259;background-color: #fff;border-color: #ec7259;width: 30px;height: 30px;border-radius: 50%;"><span>赞</span></a></div>';
+        var html = '<div style=" position: fixed; bottom: 28px; right: 10px;"><a href="https://bus.ossoft.cn/dashang.html" target="_blank" class="btn" style="padding: 4px; color: #ec7259; background-color: #fff; border: 2px #ec7259 solid; width: 30px; height: 30px; border-radius: 50%;"><span>赞</span></a></div>';
         $("body").append(html)
     };
 
