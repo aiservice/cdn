@@ -130,6 +130,7 @@ var pageTable = function (table_params) {
     var onLoadSuccessFunc = table_params.onLoadSuccessFunc;
     var onPostBody = table_params.onPostBody;
     var showFooter = table_params.showFooter;
+    var pageSize = 10;
 
 
     var sidePagination = "client";
@@ -137,6 +138,9 @@ var pageTable = function (table_params) {
     if (typeof is_server === 'boolean' && is_server) {
         sidePagination = "server";
         search = false;
+    }
+    if (typeof table_params.pageSize === 'number') {
+        pageSize = table_params.pageSize;
     }
 
     pagetable_params = {
@@ -164,7 +168,7 @@ var pageTable = function (table_params) {
         sidePagination: sidePagination,
         //onLoadSuccess: onLoadSuccessFunc
         //pageNumber: 1,
-        //pageSize: 10,
+        pageSize: pageSize,
         //pageList: [10, 25, 50, 100],
     }
     if (typeof onLoadSuccessFunc === 'function') {
@@ -241,7 +245,7 @@ var pageTableSearch = function (table_params) {
     });
 }
 
-function initTable(columns_table, url, table_id) {
+function initTable(columns_table, url, table_id, pageSize) {
     var tId = "data-table";
     if (typeof table_id != "undefined") {
         tId = table_id;
@@ -251,7 +255,8 @@ function initTable(columns_table, url, table_id) {
         ajax_url: url,
         clickToSelect: true,
         is_server: true,
-        columns: columns_table
+        columns: columns_table,
+        pageSize: pageSize
         // onLoadSuccessFunc: onLoadSuccess
     }
     return pageTable(table_params);
@@ -306,11 +311,17 @@ function buildForm(containerId, formParameter) {
     var rowHtml = '<div class="form-group"> ' +
         '<label class="control-label col-xs-12 col-sm-3 no-padding-right">TITLE:</label> ' +
         '<div class="col-xs-12 col-sm-9"> <div class="clearfix">CONTENT</div></div> ' +
-        '</div>'
+        '</div>';
+    if (containerId.indexOf("_lg") !== -1) {
+        rowHtml = '<div class="form-group"> ' +
+            '<label class="control-label col-xs-12 col-sm-1 no-padding-right">TITLE:</label> ' +
+            '<div class="col-xs-12 col-sm-11"> <div class="clearfix">CONTENT</div></div> ' +
+            '</div>';
+    }
 
     var html = '';
     var elementHtml = '';
-
+    var containsDate = false;
     for (var i = 0; i < formParameter.length; i++) {
         if (formParameter[i].shown !== undefined && formParameter[i].shown) {
             var title = formParameter[i].title;
@@ -346,7 +357,21 @@ function buildForm(containerId, formParameter) {
             }
 
             if (formParameter[i].type == 'textarea') {
-                elementHtml = '<textarea class="form-control unborder" name="' + formParameter[i].field + '" rows="3">' + default_value + '</textarea>';
+                var row = 3;
+                if (typeof formParameter[i].child_type === 'number') {
+                    row = formParameter[i].child_type
+                }
+                elementHtml = '<textarea class="form-control unborder" name="' + formParameter[i].field + '" rows="' + row + '">' + default_value + '</textarea>';
+            }
+
+            if (formParameter[i].type == 'date') {
+                containsDate = true;
+                elementHtml = '<div class="input-group">\n' +
+                    '<input class="form-control date-picker" name="' + formParameter[i].field + '" type="text" />\n' +
+                    '<span class="input-group-addon">\n' +
+                    '<i class="fa fa-calendar bigger-110"></i>\n' +
+                    '</span>\n' +
+                    '</div>'
             }
 
             if (formParameter[i].type == 'select') {
@@ -388,7 +413,14 @@ function buildForm(containerId, formParameter) {
         }
     }
 
-    $('#' + containerId).html(html);
+    $('#' + containerId).append(html);
+    if (containsDate) {
+        $('.date-picker').datetimepicker({
+            locale: 'zh-cn',
+            format: 'YYYY-MM-DD'
+        });
+    }
+
 }
 
 function getIdSelections(table) {
