@@ -366,8 +366,16 @@ function buildForm(containerId, formParameter) {
 
             if (formParameter[i].type == 'date') {
                 containsDate = true;
-                elementHtml = '<div class="input-group">\n' +
-                    '<input class="form-control date-picker" name="' + formParameter[i].field + '" type="text" />\n' +
+                var dateValue = default_value;
+                if (!isNaN(default_value)) {
+                    try {
+                        dateValue = moment(default_value).format('YYYY-MM-DD');
+                    } catch (e) {
+                        console.log(e)
+                    }
+                }
+                elementHtml = '<div class="input-group date-picker">\n' +
+                    '<input class="form-control" name="' + formParameter[i].field + '" value="' + dateValue + '" type="text" />\n' +
                     '<span class="input-group-addon">\n' +
                     '<i class="fa fa-calendar bigger-110"></i>\n' +
                     '</span>\n' +
