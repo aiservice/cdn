@@ -2,3 +2,4 @@
 .swipebox-video { position: relative;    display: block;border: 25px solid #404040; color: #404040; height: 0; width:0; -webkit-border-radius: 100%; -moz-border-radius: 100%; -o-border-radius: 100%; border-radius: 100%;  }
 .swipebox-video i  { border-style: solid; text-indent: -9999px; position: absolute; top: -8px; left: -3px;  border-color: transparent transparent transparent #fff; border-width: 8px 0 8px 12px;  width: 0; height: 0;}
 .v-container{background: rgba(0, 0, 0, 0.8);padding: 25px;width: 50px;height: 50px;}.ads_mobile{text-align: center;height: auto !important;overflow: hidden}
+blockquote { padding: 10px 20px !important; border-left: 5px solid #9E9E9E; color: #888; }
