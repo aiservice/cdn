@@ -421,7 +421,7 @@ function buildForm(containerId, formParameter) {
         }
     }
 
-    $('#' + containerId).append(html);
+    $('#' + containerId).html(html);
     if (containsDate) {
         $('.date-picker').datetimepicker({
             locale: 'zh-cn',
