@@ -65,7 +65,7 @@ body, html {
     display: inline-block;
     color: #1296db;
 }
-.form-wrap, .hot-wrap {
+.form-wrap {
     max-width: 600px;
     min-height: 50px;
     margin: 30px auto;
@@ -103,6 +103,9 @@ body, html {
     background-size: 20px 20px;
 }
 .hot-wrap{
+    max-width: 1028px;
+    min-height: 50px;
+    margin: 30px auto;
     margin-bottom: 10px;
 }
 #hot .inner{
