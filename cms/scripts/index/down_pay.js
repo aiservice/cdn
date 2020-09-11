@@ -29,7 +29,7 @@ function noSource() {
     if (typeof cur_location_url != "undefined" && cur_location_url.indexOf("download.html") === -1) {
         var durl = "https://72k.us/file/1210232-448745322";
         var sid = 1772;
-        if (typeof site_id != "undefined" && site_id === 1937) {
+        if (typeof site_id != "undefined") {
             sid = site_id;
             if (site_id === 1937) {
                 durl = "https://72k.us/file/1210232-461016633";
