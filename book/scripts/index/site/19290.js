@@ -7,10 +7,4 @@ filterUrls = ["pingdengzhongyouchayi-zh.html","cate-5008","category-5008","erzid
 siteGUrls = ["aishen3"];
 siteAlimamaUrls = ["aishen3"];
 
-o_data_ad_300="3549234227527096833-502";
-o_data_ad_300_right="3549234227527096833-503";
-o_data_ad_mobile="3549234227527096833-456";
-o_data_ad_728="3549234227527096833-501";
-siteOtherUrls = ["aishen3"];
-
 third_opacity_css  ="opacity: 0.03;"
