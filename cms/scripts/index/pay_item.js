@@ -132,10 +132,11 @@ function startCheck() {
             success: function (a) {
                 if (a.code == 1) {
                     clearInterval(erphpOrder);
+                    clearInterval(erphpTimer);
                     popTip(a.msg);
-                    setTimeout(function () {
-                        location.href = "cart.html";
-                    }, 2000)
+                    $("#container_data").hide();
+                    $("#success_tip").show();
+
 
                 } else if (a.code == -1) {
                     clearInterval(erphpOrder);
