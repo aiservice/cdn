@@ -11,9 +11,9 @@ if(typeof site_enabled_other != "undefined" && site_enabled_other){
 if(typeof site_enabled_g != "undefined" && site_enabled_g){
     loadGoogleAds();
 }
-if(typeof site_enabled_alimama != "undefined" && site_enabled_alimama){
-    loadAlimama("m_bottom");
-}
+// if(typeof site_enabled_alimama != "undefined" && site_enabled_alimama){
+//     loadAlimama("m_bottom");
+// }
 document.write('</div>');
 
 function loadTempJs() {
