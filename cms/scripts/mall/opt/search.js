@@ -106,7 +106,7 @@ function nameFormatter(value, row, index) {
 }
 
 function siteDomainFormatter(value, row, index) {
-    return "<a href='" + row.site_domain + ".html' target='_blank'>" + row.site_domain + "</a>";
+    return "<a href='" + row.site_domain + "' target='_blank'>" + row.site_domain + "</a>";
 }
 
 function siteRankFormatter(value, row, index) {
