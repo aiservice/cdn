@@ -132,6 +132,15 @@ body, html {
     color: #fff;
     background-color: #0f87c5
 }
+#hot .hot-item img {
+    vertical-align: text-bottom;
+    height: 20px;
+    padding-right: 3px;
+    width: auto;
+    overflow: hidden;
+}
+#hot .hot-item img{transform:scale(1,1);transition: all 0.5s ease-out;}
+#hot .hot-item img:hover{transform:scale(13,13) !important;}
 .ads{
     display: flex;
     justify-content: center;
