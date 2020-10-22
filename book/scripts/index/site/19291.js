@@ -5,7 +5,7 @@ g_data_ad_client = "ca-pub-4603891518763240";
 
 filterUrls = ["cate-5008","category-5008"];
 siteGUrls = ["feiku"];
-siteAlimamaUrls = ["feiku"];
+// siteAlimamaUrls = ["feiku"];
 
 o_data_ad_300="";
 o_data_ad_300_right="";
@@ -13,5 +13,5 @@ o_data_ad_mobile="8434150992547607260-539";
 o_data_ad_728="";
 siteOtherUrls = ["feiku"];
 
-siteEUrls = ["feiku"];
+// siteEUrls = ["feiku"];
 e_data_ad_300="3945536";
