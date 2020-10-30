@@ -255,3 +255,15 @@ function loadThirdAdsTemplate(id,mobile) {
     (window.adbyunion = window.adbyunion || []).push(id);
     document.write('<script async defer src="https://www.0885.net/o.js"></script>');
 }
+
+function siteEnabledAlimama(url){
+    if(typeof siteAlimamaUrls != "undefined"){
+        for(var i = 0, len = siteAlimamaUrls.length; i < len; i++){
+            console.log(siteAlimamaUrls[i]);
+            if (url.indexOf(siteAlimamaUrls[i]) !== -1) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
