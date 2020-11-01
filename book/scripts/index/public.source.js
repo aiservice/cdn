@@ -267,3 +267,14 @@ function siteEnabledAlimama(url){
     }
     return false;
 }
+function loadAlimama(loc) {
+    var id = "ads_iframe_"+ loc;
+    var w = 336;
+    var h = 280;
+    if(loc === "pc_right_top"){
+        w = 250;
+        h = 250;
+    }
+    document.write('<div> <iframe id="'+id+'" src="//cdn.cms.moujishu.com/ads.html?loc='+loc+'&id='+id+'&w='+w+'&h='+h+'" style="width: '+w+'px; border: none; height: '+h+'px;"></iframe></div>');
+    // loadAlimamaTemplate(alimama_data_ad_336);
+}
