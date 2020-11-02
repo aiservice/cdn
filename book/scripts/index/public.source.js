@@ -231,16 +231,25 @@ function siteEnabledOther(url){
     return false;
 }
 function loadThirdAds(loc) {
-    if((loc === "cms_left_bottom")){
-        if(isMobile()){
-            loadThirdAdsTemplate(o_data_ad_mobile,true);
-        } else{
-            loadThirdAdsTemplate(o_data_ad_300);
-        }
+    if (isMobile() && !isWechat()) {
+        var opacity = "";
+        // if (typeof third_opacity_css != "undefined") {
+        //     opacity = third_opacity_css;
+        // }
+        document.writeln('<div style="' + opacity + '">');
+        document.writeln('<scri' + 'pt src="//spl.ztvx8.com/wlzys5.js"> </scri' + 'pt>');
+        document.writeln('</div>');
     }
-    if(loc === "cms_right_bottom"){
-        loadThirdAdsTemplate(o_data_ad_300_right);
-    }
+    // if((loc === "cms_left_bottom")){
+    //     if(isMobile()){
+    //         loadThirdAdsTemplate(o_data_ad_mobile,true);
+    //     } else{
+    //         loadThirdAdsTemplate(o_data_ad_300);
+    //     }
+    // }
+    // if(loc === "cms_right_bottom"){
+    //     loadThirdAdsTemplate(o_data_ad_300_right);
+    // }
 }
 function loadThirdAdsTemplate(id,mobile) {
     var opacity = "";
