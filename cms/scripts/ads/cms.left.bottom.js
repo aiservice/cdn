@@ -36,11 +36,15 @@ if (typeof site_enabled_b != "undefined" && site_enabled_b && typeof site_enable
     document.write('</div>');
 } else if (typeof site_enabled_g != "undefined" && site_enabled_g) {
     loadGoogleAds();
+    loadOther();
 } else if (typeof site_enabled_b != "undefined" && site_enabled_b) {
     loadBaiduAds("cms_left_bottom");
+    loadOther();
 } else if (typeof site_enabled_alimama != "undefined" && site_enabled_alimama) {
     loadAlimama("cms_left_bottom");
+    loadOther();
 } else if (typeof site_enabled_e != "undefined" && site_enabled_e) {
     loadExoAds("cms_left_bottom");
+    loadOther();
 }
 document.write('</div>');
