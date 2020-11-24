@@ -35,13 +35,18 @@ if (typeof site_enabled_b != "undefined" && site_enabled_b && typeof site_enable
     loadExoAds("cms_left_bottom");
     document.write('</div>');
 } else if (typeof site_enabled_g != "undefined" && site_enabled_g) {
-    document.write('<div class="col-sm-6">');
-    loadGoogleAds();
-    loadOther();
-    document.write('</div>');
-    document.write('<div class="col-sm-6">');
-    loadGoogleAds();
-    document.write('</div>');
+    if (isMobile()) {
+        loadGoogleAds();
+        loadOther();
+    } else {
+        document.write('<div class="col-sm-6">');
+        loadGoogleAds();
+        loadOther();
+        document.write('</div>');
+        document.write('<div class="col-sm-6">');
+        loadGoogleAds();
+        document.write('</div>');
+    }
 } else if (typeof site_enabled_b != "undefined" && site_enabled_b) {
     loadBaiduAds("cms_left_bottom");
     loadOther();
