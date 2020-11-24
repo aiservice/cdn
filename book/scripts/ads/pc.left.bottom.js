@@ -35,7 +35,14 @@ if(typeof site_enabled_b != "undefined" && site_enabled_b && typeof site_enabled
     document.write('</li>');
     document.write('</ul>');
 }else if(typeof site_enabled_g != "undefined" && site_enabled_g) {
+    document.write('<ul class="adsul">');
+    document.write('<li>');
     loadGoogleAds();
+    document.write('</li>');
+    document.write('<li>');
+    loadGoogleAds();
+    document.write('</li>');
+    document.write('</ul>');
 }else if(typeof site_enabled_b != "undefined" && site_enabled_b){
     loadBaiduAds("pc_left_bottom");
 }else if(typeof site_enabled_alimama != "undefined" && site_enabled_alimama){
