@@ -10,4 +10,4 @@ filterUrls = ["xxxxx"];
 siteGUrls = ["toutiao"];
 siteBUrls = ["aiis","china"];
 
-go_my_site=false;
+go_my_site=true;
