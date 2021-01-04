@@ -251,7 +251,8 @@ function goNewDomain() {
         if (!isLocal(cur_location_url)) {
             var cur_host = getHostName(cur_location_url);
             if (cur_host && (cur_host !== app_domain)) {
-                location.href = cur_location_url.replace(cur_host, app_domain);
+                var tempUrl = cur_location_url.replace(cur_host, app_domain);
+                location.href = tempUrl.replace("https://", "http://");
             }
         }
     }
@@ -306,7 +307,7 @@ if (typeof cur_location_url != "undefined") {
     //     e_data_ad_300 = "3900380";
     // }
 
-    site_enabled_alimama = true;
+    site_enabled_alimama = false;
     if (cur_location_url.indexOf("wuxia") !== -1) {
         site_enabled_alimama = false;
     }
