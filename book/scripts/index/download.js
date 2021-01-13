@@ -1,1 +1,0 @@
-document.writeln('<div class="panel panel-danger"> <div class="panel-heading"> <h3 class="panel-title">无法下载请加入QQ群</h3> </div> <div class="panel-body"> 群 号：<code>847114627</code> </div> </div>');
