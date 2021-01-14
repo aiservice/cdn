@@ -40,7 +40,7 @@ function noSource() {
             sid: sid,
             title: "快速求资源指南",
             download_url: durl,
-            img_url: "https://i.loli.net/2020/09/11/xRNOUXAsg8e7MYw.jpg"
+            img_url: "https://img.imgdb.cn/item/5fffa50f3ffa7d37b35c5d93.jpg"
         };
         var sb = [];
         for (var i in downPayParams) {
