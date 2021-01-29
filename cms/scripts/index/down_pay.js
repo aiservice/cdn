@@ -47,7 +47,7 @@ function noSource() {
             sb.push(i + '=' + encodeURIComponent(downPayParams[i] || ''));
         }
         var download_url = "/download.html?" + sb.join('&');
-        document.writeln('<div class="alert alert-success" role="alert"> 暂无资源：<a href="' + download_url + '" target="_blank" class="alert-link">《点击下载快速求资源指南》</a> </div>');
+        document.writeln('<div class="alert alert-danger" role="alert"> 暂无资源：<a href="' + download_url + '" target="_blank" class="alert-link">《点击下载快速求资源指南》</a> </div>');
     }
 }
 
