@@ -1,23 +1,5 @@
-$(document).ready(function () {
-    setTimeout(updateViewCount, 3000)
-});
-
-function updateViewCount() {
-    $.post("/CsAjax.do?method=updateNewsViewCount", {"news_id": $("#news_id").val()}, function (datas) {
-        if (datas.enable_pay && typeof site_id != "undefined" && site_id === 1772) {
-            if (datas.enable_pay === "true") {
-                var $no_source = $("#no_source");
-                if ($no_source.length > 0) {
-                    $no_source.after(paySourceHtml());
-                    $no_source.remove();
-                }
-            } else {
-                var $pay_source = $("#pay_source");
-                if ($pay_source.length > 0) {
-                    $pay_source.after(noSourceHtml());
-                    $pay_source.remove();
-                }
-            }
-        }
-    });
-}
+/*!
+ * Powered by uglifiyJS v2.6.1, Build by http://www.aizhan.club
+ * build time: Tue Feb 16 2021 20:54:15 GMT+0800 (China Standard Time)
+*/
+function updateViewCount(){$.post("/CsAjax.do?method=updateNewsViewCount",{news_id:$("#news_id").val()},function(e){if(e.enable_pay&&"undefined"!=typeof site_id&&1772===site_id)if("true"===e.enable_pay){var t=$("#no_source");t.length>0&&(t.after(paySourceHtml()),t.remove())}else{var n=$("#pay_source");n.length>0&&(n.after(noSourceHtml()),n.remove())}})}$(document).ready(function(){setTimeout(updateViewCount,3e3)});
