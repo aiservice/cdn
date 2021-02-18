@@ -2,7 +2,7 @@ var link_email_tmp = "";
 if (typeof link_email != "undefined" && link_email) {
     link_email_tmp = link_email;
 }
-if (typeof downPayParams != "undefined" && downPayParams) {
+if (typeof downPayParams != "undefined" && downPayParams.enabledDownload) {
     if (downPayParams.isPay) {
         document.writeln(paySourceHtml());
     } else {
